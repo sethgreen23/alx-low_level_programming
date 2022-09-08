@@ -1,11 +1,12 @@
-#include<stdio.h>
+#include <stdio.h>
 
 /**
- * main - The main method
+ * main - main function
  *
  * Return: Always return (0)
  */
 int main(void)
 {
+	printf("Hello world");
 	return (0);
 }
