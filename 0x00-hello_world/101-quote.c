@@ -1,4 +1,5 @@
 #include<unistd.h>
+#include<string.h>
 /**
  * main - main function
  *
@@ -6,7 +7,7 @@
  */
 int main(void)
 {
-	int str_len = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+	int str_len = strlen("and that piece of art is useful\" - Dora Korpar, 2015-10-19");
 	write(2,"and that piece of art is useful\" - Dora Korpar, 2015-10-19",str_len);
 	return (1);
 }
