@@ -2,7 +2,7 @@
 /**
  * main - main function
  *
- * Returned: it return the size of all the c types
+ * Return: print the size of all the c types
  */
 int main(void)
 {
