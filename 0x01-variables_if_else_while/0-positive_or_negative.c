@@ -5,10 +5,12 @@
 /*
  * main - main function
  *
+ * Description: print if the number is positive, negative or zero
+ *
  * Return: Always return (0)
  *
- * Description: print if the number is positive, negative or zero
  */
+
 int main(void)
 {
 	int n;
