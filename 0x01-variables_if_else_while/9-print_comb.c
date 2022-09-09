@@ -32,5 +32,7 @@ int main(void)
 		character++;
 	}
 
+	puchar('\n');
+
 	return (0);
 }
