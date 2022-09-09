@@ -14,7 +14,7 @@ int main(void)
 
 	letter = 97;
 
-	while (letter < 123)i
+	while (letter < 123)
 	{
 
 		printf("%c", letter++);
