@@ -11,14 +11,14 @@
  */
 int main(void)
 {
-	
+
 	char character;
 
 	character = 'z';
 
 	while (character >= 'a')
 	{
-	
+
 		putchar(character--);
 
 	}
