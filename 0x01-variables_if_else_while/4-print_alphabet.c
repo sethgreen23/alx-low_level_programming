@@ -22,11 +22,11 @@ int main(void)
 
 			continue;
 
-			printf("%c", letter++);
+			putchar(letter++);
 
 	}
 
-	printf("\n");
+	putchar("\n");
 
 	return (0);
 }
