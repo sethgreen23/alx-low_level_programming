@@ -14,20 +14,23 @@ int main(void)
 
 	for (x = 0; x < 10; x++)
 	{
-		if (x == y)
-			continue;
-		current = x * 10 + y;
-		next = y * 10 + x;
-		if (current < next)
+		for (y = 0; y < 10; y++)
 		{
-			putchar(x + '0');
-			putchar(y + '0');
-			if (x <= 8 && y <= 9)
+			if (x == y)
+				continue;
+			current = x * 10 + y;
+			next = y * 10 + x;
+			if (current < next)
 			{
-				if (!(x == 8 && y == 9))
+				putchar(x + '0');
+				putchar(y + '0');
+				if (x <= 8 && y <= 9)
 				{
-					putchar(',');
-					putchar(' ');
+					if (!(x == 8 && y == 9))
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
 			}
 		}
