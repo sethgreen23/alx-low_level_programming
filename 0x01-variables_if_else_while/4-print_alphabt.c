@@ -22,7 +22,7 @@ int main(void)
 
 			continue;
 
-			putchar(letter++);
+		putchar(letter++);
 
 	}
 
