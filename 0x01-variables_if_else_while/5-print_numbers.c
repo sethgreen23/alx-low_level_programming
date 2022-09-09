@@ -12,7 +12,7 @@ int main(void)
 {
 	int number;
 
-	number = 1;
+	number = 0;
 
 	while (number < 10)
 	{
