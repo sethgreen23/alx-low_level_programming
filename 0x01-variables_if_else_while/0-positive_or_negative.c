@@ -5,9 +5,9 @@
 /*
  * main - main function
  *
- * Description: print if the number is positive, negative or zero
+ * Description: 'print if the number is positive, negative or zero'
  *
- * Return: Always return (0)
+ * Return: Always 0 (Success)
  *
  */
 
