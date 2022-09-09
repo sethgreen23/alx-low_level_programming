@@ -4,7 +4,8 @@
 /**
  * main - main function
  *
- * Description: print all the alphabet in lower case each one followed by new line
+ * Description: print all the alphabet in lower case
+ * each one followed by new line
  *
  * Return: Always 0 (Success)
  */
