@@ -6,6 +6,8 @@
  *
  * Description: print number from 1 to 9
  * without using printf or char
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
@@ -16,7 +18,7 @@ int main(void)
 	while (number < 10)
 	{
 
-		putchar(number+'0');
+		putchar(number + '0');
 
 		number++;
 
