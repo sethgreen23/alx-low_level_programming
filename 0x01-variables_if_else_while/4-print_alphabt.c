@@ -13,20 +13,15 @@ int main(void)
 {
 	char letter;
 
-	letter = 97;
+	letter = 'a';
 
-	while (letter < 123)
+	while (letter <= 'z')
 	{
 		
-		if (letter == 'e' || letter== 'q')
+		if (letter != 'e' || letter != 'q')
+			putchar(letter++);
 
-			continue;
-
-		putchar(letter);
-
-		letter++;
-
-	}
+}
 
 	putchar('\n');
 
