@@ -2,15 +2,15 @@
 #include <time.h>
 #include <stdio.h>
 
-/*
+/**
  * main - main function
  *
- * Description: 'print if the number is positive, negative or zero'
+ * Description: Get a random number and print the number
+ * and if it is positive, negative or zero
  *
  * Return: Always 0 (Success)
  *
  */
-
 int main(void)
 {
 	int n;
