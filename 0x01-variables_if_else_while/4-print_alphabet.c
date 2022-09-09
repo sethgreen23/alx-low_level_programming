@@ -5,7 +5,7 @@
  * main - main function
  *
  * Description: print all the alphabet in lower case
- * each one followed by new line
+ * except e and q
  *
  * Return: Always 0 (Success)
  */
