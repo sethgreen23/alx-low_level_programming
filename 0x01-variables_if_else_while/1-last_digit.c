@@ -11,7 +11,7 @@
  */
 int main(void)
 {
-	int n, last _digit;
+	int n, last_digit;
 
 	srand(time(0));
 
