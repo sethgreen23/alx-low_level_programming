@@ -22,5 +22,5 @@ int print_last_digit(int number)
 		reminder = quoation % 10;
 		quoation = quoation / 10;
 	}
-	return (reminder);
+	return (reminder * 11);
 }
