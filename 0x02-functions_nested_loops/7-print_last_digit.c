@@ -11,6 +11,12 @@ int print_last_digit(int number)
 {
 	int reminder = number, quoation = number;
 
+	if (number < 0)
+	{
+		quoation = -number;
+		reminder = -number;
+	}
+
 	while (reminder > 10)
 	{
 		reminder = quoation % 10;
