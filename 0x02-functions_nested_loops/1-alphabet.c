@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stlib.h>
+#include <sdtlib.h>
 #include "main.h"
 /**
  * print_alphabet - secondary function
