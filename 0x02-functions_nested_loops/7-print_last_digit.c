@@ -9,19 +9,13 @@
  */
 int print_last_digit(int number)
 {
-	int reminder = number, quoation = number;
+	int reminder;
 
 	if (number < 0)
 	{
-		quoation = -number;
-		reminder = -number;
+		number = -number;
 	}
-
-	while (reminder > 10)
-	{
-		reminder = quoation % 10;
-		quoation = quoation / 10;
-	}
+	reminder = quoation % 10;
 	_putchar(reminder + '0');
 	return (reminder);
 }
