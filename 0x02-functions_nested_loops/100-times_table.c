@@ -19,6 +19,9 @@ void print_times_table(int n)
 	{
 		printf("\n");
 	}
+	else
+	{
+
 	for (x = 0; x < m; x++)
 	{
 		for (y = 0; y < m; y++)
@@ -31,5 +34,6 @@ void print_times_table(int n)
 			printf("%4d", x * y);
 		}
 		printf("\n");
+	}
 	}
 }
