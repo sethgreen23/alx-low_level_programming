@@ -9,7 +9,7 @@
  */
 void print_to_98(int n)
 {
-	int counter = n;
+	int counter = n, count = 0;
 
 	while (counter != 98)
 	{
@@ -21,7 +21,11 @@ void print_to_98(int n)
 			counter--;
 		else
 			counter++;
+		count++;
 	}
-	printf("%3d", 98);
+	if (count)
+		printf("%3d", 98);
+	else
+		printf("%d", 98);
 	printf("\n");
 }
