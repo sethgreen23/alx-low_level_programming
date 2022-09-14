@@ -10,6 +10,14 @@ void print_times_table(int n)
 {
 	int x, y, m = n + 1;
 
+	if (n == 0)
+	{
+		printf("%d", 0);
+	}
+	else if (n >= 100)
+	{
+		return (0);
+	}
 	for (x = 0; x < m; x++)
 	{
 		for (y = 0; y < m; y++)
