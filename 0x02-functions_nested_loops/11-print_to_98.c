@@ -13,7 +13,7 @@ void print_to_98(int n)
 
 	while (counter != 98)
 	{
-		if (counter >= 100)
+		if ((counter / 100) != 0)
 			printf("%4d,", counter);
 		else
 			printf("%3d,", counter);
