@@ -17,9 +17,9 @@ void print_times_table(int n)
 			if (y == 0)
 			printf("%d,", x * y);
 		else if (y < n)
-			printf("%3d,", x * y);
+			printf("%4d,", x * y);
 		else
-			printf("%3d", x * y);
+			printf("%4d", x * y);
 		}
 		printf("\n");
 	}
