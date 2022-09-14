@@ -13,11 +13,11 @@ void print_times_table(int n)
 	if (n == 0)
 	{
 		printf("%d", 0);
-		print("\n");
+		printf("\n");
 	}
 	else if (n >= 100)
 	{
-		print("\n");
+		printf("\n");
 	}
 	for (x = 0; x < m; x++)
 	{
