@@ -3,3 +3,4 @@ function and nested loops
 1-isdigit: check if digit
 2-mul: multiply two digits
 print_numbers: print digits from 0 to 9
+4-print_most_numbers: print digits fro 0 to 9 except 2 and 4
