@@ -16,7 +16,7 @@ void print_triangle(int n)
 		{
 			for (j = 0; j < n; j++)
 			{
-				if (j < n - 1)
+				if (j < n - i)
 					printf(" ");
 				else
 					printf("#");
