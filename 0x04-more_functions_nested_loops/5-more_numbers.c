@@ -15,7 +15,7 @@ void more_numbers(void)
 			tens = j / 10;
 			digit = j % 10;
 			if (tens == 1)
-				_puthchar(tens + '0');
+				_putchar(tens + '0');
 			_putchar(digit + '0');
 		}
 		_putchar('\n');
