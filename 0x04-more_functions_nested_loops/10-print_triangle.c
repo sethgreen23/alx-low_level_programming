@@ -22,7 +22,8 @@ void print_triangle(int size)
 				else
 					printf("#");
 			}
-			printf("\n");
+			if (i != size)
+				printf("\n");
 		}
 	}
 	printf("\n");
