@@ -8,24 +8,12 @@
  */
 void rev_string(char *str)
 {
-	int counter = 0;
+	int i;
 
-	if (*str == '\0')
-	{
-		printf(" ");
-		return;
-	}
-	while (*str != '\0')
-	{
-		counter++;
-		str++;
-	}
-	str--;
-	while (counter != 0)
-	{
+	for (i = 0; *str!='\0'; i--, str--)
+	;
+
+	for (--i, --str; i>=0; i--, str--)
 		printf("%c", *str);
-		counter--;
-		str--;
-	}
 	printf("\n");
 }
