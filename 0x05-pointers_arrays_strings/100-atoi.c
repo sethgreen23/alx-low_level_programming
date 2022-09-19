@@ -1,0 +1,39 @@
+#include "main.h"
+/**
+ * _atoi - convert a string to an int
+ *
+ * @s: string to convert
+ *
+ * Return: Return and integer
+ */
+int _atoi(char *s)
+{
+	int i = 0, sign, start, count = 0, end, coefition = 1, number = 0, j, k;
+
+	if (s[0] ==  '\0')
+		return (0);
+	while (1)
+	{
+		if (s[i] >= 48 && s[i] <= 57)
+			break;
+		i++;
+	}
+	sign = *(s + i - 1) == '-' ? -1 : 1;
+	start = i;
+	while (1)
+	{
+		if (s[i] < 48 || s[i] > 57)
+			break;
+		count++;
+		i++;
+	}
+	end = i - 1;
+	for (j = 0; j < count - 1; j++)
+		coefition *= 10;
+	for (k = start; k <= end; k++)
+	{
+		number += (s[k] - 48) * coefition;
+		coefition /= 10;
+	}
+	return (sign * coefition);
+}
