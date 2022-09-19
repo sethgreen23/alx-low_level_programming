@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * print_rev - print string on revese
+ * rev_string - reverse string
  *
-* @str: string
+ * @s: string
  *
- * Return: reversed string
+ * Return: nothing
  */
-void print_rev(char *str)
+void rev_string(char *str)
 {
 	int counter = 0;
 
