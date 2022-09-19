@@ -1,19 +1,23 @@
 #include "main.h"
 /**
- * rev_string - reverse string
+ * rev_string - reverse a string
  *
- * @s: string
+ * @str: string
  *
- * Return: nothing
+ * Return: return nothing
  */
 void rev_string(char *str)
 {
-	int i;
+	int i, j, l;
+	char c;
 
-	for (i = 0; *str!='\0'; i--, str--)
-	;
-
-	for (--i, --str; i>=0; i--, str--)
-		printf("%c", *str);
-	printf("\n");
+	for (i = 0; str[i] != '\0'; i++)
+		;
+	l = i;
+	for (i--, c = 0; j < l / 2; j++)
+	{
+		c = str[i];
+		str[i] = str[j];
+		str[j] = c;
+	}
 }
