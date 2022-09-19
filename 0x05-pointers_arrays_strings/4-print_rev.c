@@ -1,0 +1,26 @@
+#include "main.h"
+/**
+ * print_rev - print string on revese
+ *
+ * @s: string
+ *
+ * Return: reversed string
+ */
+void print_rev(char *s)
+{
+	int counter = 0;
+
+	while (*str != '\0')
+	{
+		counter++;
+		str++;
+	}
+	str--;
+	while (counter != 0)
+	{
+		printf("%c", *str);
+		counter--;
+		str--;
+	}
+	printf("\n");
+}
