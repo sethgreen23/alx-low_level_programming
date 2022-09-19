@@ -25,7 +25,7 @@ int _atoi(char *s)
 			plus++;
 		i++;
 	}
-	sign = plus >= minus ? 1 : -1;
+	sign = plus < minus || minus == 1 ? -1 : 1;
 	start = i;
 	while (1)
 	{
