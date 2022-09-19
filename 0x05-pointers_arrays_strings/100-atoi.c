@@ -24,6 +24,7 @@ int _atoi(char *s)
 		i++;
 	}
 	sign = minus % 2 == 0 ? 1 : -1;
+	coefition *= sign;
 	start = i;
 	while (1)
 	{
