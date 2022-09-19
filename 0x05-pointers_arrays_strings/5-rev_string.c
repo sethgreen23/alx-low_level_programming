@@ -11,8 +11,10 @@ void rev_string(char *str)
 	int counter = 0;
 
 	if (*str == '\0')
+	{
 		printf(" ");
-
+		return;
+	}
 	while (*str != '\0')
 	{
 		counter++;
