@@ -9,6 +9,7 @@
 int _atoi(char *s)
 {
 	int i = 0, sign, start, count = 0, end, coefition = 1, number = 0, j, k;
+	int minus = 0, plus = 0;
 
 	if (s[0] ==  '\0')
 		return (0);
@@ -16,9 +17,13 @@ int _atoi(char *s)
 	{
 		if (s[i] >= 48 && s[i] <= 57)
 			break;
+		if (s[i] == '-')
+			minus++;
+		else if (s[i] == '+')
+			plus++
 		i++;
 	}
-	sign = *(s + i - 1) == '-' ? -1 : 1;
+	sign = plus >= minus ? 1 : -1;
 	start = i;
 	while (1)
 	{
