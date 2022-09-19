@@ -40,5 +40,5 @@ int _atoi(char *s)
 		number += (s[k] - 48) * coefition;
 		coefition /= 10;
 	}
-	return (sign * coefition);
+	return (sign * number);
 }
