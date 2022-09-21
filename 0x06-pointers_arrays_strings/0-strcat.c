@@ -3,14 +3,15 @@
  * _strcat - concatenate to strings
  *
  * @dest: destination
+ *
  * @src: source
  *
- * return: return a sting
+ * Return: return a sting
  */
-char *_strcat(char *dest, char *stc)
+char *_strcat(char *dest, char *src)
 {
 	int counter = 0;
-	
+
 	while (dest[counter] != '\0')
 		counter++;
 	while (*src != '\0')
