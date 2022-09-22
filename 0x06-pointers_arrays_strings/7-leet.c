@@ -18,7 +18,7 @@ char *leet(char *c)
 			c[i] = 3 +  '0';
 		if (c[i] == 'o' || c[i] == 'O')
 			c[i] = 0 + '0';
-		if (c[i] == 't' || c[i] == 'T)
+		if (c[i] == 't' || c[i] == 'T')
 			c[i] = 7 + '0';
 		if (c[i] == 'l' || c[i] == 'L')
 			c[i] = 1 + '0';
