@@ -12,30 +12,16 @@ char *leet(char *c)
 
 	for (i = 0; c[i] != '\0'; i++)
 	{
-		switch (c[i])
-		{
-			case 'a':
-			case 'A':
-				c[i] = 4 + '0';
-				break;
-			case 'e':
-			case 'E':
-				c[i] = 3 + '0';
-				break;
-			case 'o':
-			case 'O':
-				c[i] = 0 + '0';
-				break;
-			case 't':
-			case 'T':
-				c[i] = 7 + '0';
-				break;
-			case 'l':
-			case 'L':
-				c[i] = 1 + '0';
-				break;
-
-		}
+		if (c[i] == 'a' || c[i] == 'A')
+			c[i] = 4 + '0';
+		if (c[i] == 'e' || c[i] == 'E')
+			c[i] = 3 +  '0';
+		if (c[i] == 'o' || c[i] == 'O')
+			c[i] = 0 + '0';
+		if (c[i] == 't' || c[i] == 'T)
+			c[i] = 7 + '0';
+		if (c[i] == 'l' || c[i] == 'L')
+			c[i] = 1 + '0';
 	}
 	return (c);
 }
