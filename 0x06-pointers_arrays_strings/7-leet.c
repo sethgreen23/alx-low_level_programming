@@ -20,7 +20,7 @@ char *leet(char *c)
 			c[i] = '0';
 		while (c[i] == 't' || c[i] == 'T')
 			c[i] = '7';
-		while (c[i] == 'l' || c[i] == 'L')
+		if (c[i] == 'l' || c[i] == 'L')
 			c[i] = '1';
 	}
 	return (c);
