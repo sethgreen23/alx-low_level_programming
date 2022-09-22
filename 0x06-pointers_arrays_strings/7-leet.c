@@ -2,11 +2,11 @@
 /**
  * leet - encode letters
  *
- * @s: test to encode
+ * @c: test to encode
  *
  * Return: return character
  */
-char *leet(char *s)
+char *leet(char *c)
 {
 	char english[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
 	char words[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
