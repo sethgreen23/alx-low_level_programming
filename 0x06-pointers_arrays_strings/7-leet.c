@@ -8,21 +8,18 @@
  */
 char *leet(char *s)
 {
-	int i;
+	char english[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
+	char words[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
+	int i, j;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; c[i] != '\0'; i++)
 	{
-		while (s[i] == 'a' || s[i] == 'A')
-			s[i] = '4';
-		while (s[i] == 'e' || s[i] == 'E')
-			s[i] = '3';
-		while (s[i] == 'o' || s[i] == 'O')
-			s[i] = '0';
-		while (s[i] == 't' || s[i] == 'T')
-			s[i] = '7';
-		while (s[i] == 'l' || s[i] == 'L')
-			s[i] = '1';
+		j = 0;
+		for (j = 0; j < 10; j++)
+		{
+			if (english[j] == c[i])
+				c[i] = words[j];
+		}
 	}
-
-	return (s);
+	return (c);
 }
