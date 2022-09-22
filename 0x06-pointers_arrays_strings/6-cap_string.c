@@ -27,5 +27,5 @@ char *cap_string(char *c)
 	c[i - 1] == 32) && c[i] >= 97 && c[i] <= 122)
 	c[i] = c[i] - 32;
 }
-	return (c)
+	return (c);
 }
