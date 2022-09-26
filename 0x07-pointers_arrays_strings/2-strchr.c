@@ -1,13 +1,12 @@
 #include "main.h"
+
 /**
  * _strchr - locate character in a string
- *
- * @s: the string to search on
- *
- * @c: the caracter to find
- *
- * Return: return pointer to the first element
+ * @s: char array string
+ * @c: char to look for
+ * Return: NULL if char not found, or pointer to first occurrence of char `c`
  */
+
 char *_strchr(char *s, char c)
 {
 	for (; *s != '\0'; s++)
