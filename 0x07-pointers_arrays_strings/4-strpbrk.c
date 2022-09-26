@@ -10,12 +10,13 @@
  * Return: return pointer of first occurence of
  * any element in c of null
  */
+
 char *_strpbrk(char *s, char *accept)
 {
+	int i;
+
 	for (; *s != '\0'; s++)
 	{
-		int i;
-
 		for (i = 0; accpet[i] != '\0'; i++)
 		{
 			if (*s == accept[i])
