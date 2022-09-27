@@ -14,15 +14,15 @@ char *_strstr(char *haystack, char *needle)
 {
 	int j, capture, i, count;
 
-	for (j = 0; s[j] != '\0'; j++)
+	for (j = 0; haystack[j] != '\0'; j++)
 	{
 		count = strlen(needle);
-		if (s[j] == needle[0])
+		if (haystack[j] == needle[0])
 		{
 			capture = j;
 			for (i = 0; needle[i] != '\0'; i++)
 			{
-				if (needle[i] == s[j])
+				if (needle[i] == haystack[j])
 				{
 					count--;
 					j++;
@@ -33,7 +33,7 @@ char *_strstr(char *haystack, char *needle)
 				}
 			}
 			if (count == 0)
-				return (&(s[capture]));
+				return (&(haystack[capture]));
 		}
 	}
 	return (0);
