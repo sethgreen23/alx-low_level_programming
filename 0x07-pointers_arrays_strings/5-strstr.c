@@ -34,6 +34,7 @@ char *_strstr(char *haystack, char *needle)
 			}
 			if (count == 0)
 				return (&haystack[capture]);
+			j=capture;
 		}
 	}
 	return (0);
