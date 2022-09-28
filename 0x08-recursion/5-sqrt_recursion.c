@@ -12,14 +12,24 @@ int _sqrt_recursion(int n)
 		return (1);
 	if (n < 0)
 		return (-1);
-	return getsquare(n, 1);
+	return (getSquare(n, 1));
 }
+/**
+ * getSquare - return the square root
+ *
+ * @n: number to find its root
+ *
+ * @i: counter to find the root
+ *
+ * Return: the root of exist or the next counter to search
+ * or -1 is doesnt exist
+ */
 
 int getSquare(int n, int i)
 {
 	if ((i * i) == n)
 		return (i);
 	if ((i * i) < n)
-		return getSquare(n, i + 1);
+		return (getSquare(n, i + 1));
 	return (-1);
 }
