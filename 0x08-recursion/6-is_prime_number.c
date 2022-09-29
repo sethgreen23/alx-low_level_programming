@@ -8,7 +8,7 @@
  */
 int is_prime_number(int n)
 {
-	int sqt;
+	int half;
 
 	if (n <= 1)
 		return (0);
