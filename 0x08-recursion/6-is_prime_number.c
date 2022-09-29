@@ -9,10 +9,10 @@
  */
 int is_prime_number(int n)
 {
-	if (n <= 1)
-		return (0);
 	int sqt;
 
+	if (n <= 1)
+		return (0);
 	sqt = ceil(sqrt(n));
 
 	return (checkPrime(n, sqt, 2));
