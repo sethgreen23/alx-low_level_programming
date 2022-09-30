@@ -3,69 +3,82 @@
 #include <stdio.h>
 #include <ctype.h>
 /**
- * is_number - check if it is a number
+ * main - Print the minimum number of coins to make change
+ * @argc: The number of command line arguments
+ * @argv: The command line arguments
  *
- * @str: strin to check
- *
- * Return: return 1 if is a number else 0
- */
-int is_number(char *str)
-{
-	int i;
-
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (!isdigit(str[i]))
-			return (0);
-	}
-	return (1);
-}
-/**
- * main - minimal number of coins to change
- *
- * @argc: argument counter
- *
- * @argv: argument vector
- *
- * Return: 1 is error and 0 if not
+ * Return: 0 if successful, 1 if number of arguments is not 1
  */
 int main(int argc, char *argv[])
 {
-	int coins[4];
-
-	int number, length, count, i;
-
-	coins[0] = 25;
-	coins[1] = 10;
-	coins[2] = 2;
-	coins[3] = 1;
+	int cents;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	if (!is_number(argv[1]))
-	{
-		printf("Error\n");
-		return (1);
-	}
-	number = atoi(argv[1]);
-	if (number <= 0)
+
+	cents = atoi(argv[1]);
+	if (cents <= 0)
 	{
 		printf("0\n");
 		return (0);
 	}
-	length = sizeof(coins) / sizeof(int);
-	count	= 0;
-	for (i = 0; i < length; i++)
-	{
-		if (number / coins[i] == 0)
-			continue;
-		count += number / coins[i];
-		number %= coins[i];
-	}
-	printf("%d\n", count);
-	return (0);
 
+	if (!is_positive_number(argv[1]))
+	{
+		printf("Error\n");
+		return (1);
+	}
+
+	printf("%d\n", number_of_coins(cents));
+
+	return (0);
+}
+
+/**
+ * is_positive_number - Check if a string contains only digits
+ * @number: The string to check
+ *
+ * Return: 1 if string contains only digits, 0 otherwise
+ */
+int is_positive_number(char *number)
+{
+	int i;
+
+	for (i = 0; number[i] != '\0'; i++)
+	{
+		if (!isdigit(number[i]))
+			return (0);
+	}
+
+	return (1);
+}
+
+/**
+ * number_of_coins - Determine the minimum number of coins to make change
+ * @cents: The amount of change
+ *
+ * Return: The minimum number of coins
+ */
+int number_of_coins(int cents)
+{
+	int coins = 0;
+
+	coins += (cents / 25);
+	cents %= 25;
+
+	coins += (cents / 10);
+	cents %= 10;
+
+	coins += (cents / 5);
+	cents %= 5;
+
+	coins += (cents / 2);
+	cents %= 2;
+
+	coins += cents;
+
+	return (coins);
 }
