@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 		}
 		int length;
 
-		length = sizeof(coins) / sizof(int);
+		length = sizeof(coins) / sizeof(int);
 
 		int count, i;
 
