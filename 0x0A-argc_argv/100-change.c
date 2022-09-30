@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 		if (number <= 0)
 		{
 			printf("0\n");
-			return (1);
+			return (0);
 		}
 		int length;
 
