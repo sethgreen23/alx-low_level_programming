@@ -1,17 +1,20 @@
 #include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
-#include <ctype.h>
+#include <stdlib.h>
+
 /**
- * main - Print the minimum number of coins to make change
- * @argc: The number of command line arguments
- * @argv: The command line arguments
- *
- * Return: 0 if successful, 1 if number of arguments is not 1
+ * main - print the min number of coins to make change for an amount of money
+ * @argc: argument count
+ * @argv: argument vector, array of strings
+ * Return: 1 if error, 0 otherwise
  */
+
 int main(int argc, char *argv[])
 {
-	int cents;
+	int total, count;
+	unsigned int i;
+	char *p;
+	int cents[] = {25, 10, 5, 2};
 
 	if (argc != 2)
 	{
@@ -19,66 +22,31 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	cents = atoi(argv[1]);
-	if (cents <= 0)
-	{
-		printf("0\n");
-		return (0);
-	}
+	total = strtol(argv[1], &p, 10);
+	count = 0;
 
-	if (!is_positive_number(argv[1]))
+	if (!*p)
+	{
+		while (total > 1)
+		{
+			for (i = 0; i < sizeof(cents[i]); i++)
+			{
+				if (total >= cents[i])
+				{
+					count += total / cents[i];
+					total = total % cents[i];
+				}
+			}
+		}
+		if (total == 1)
+			count++;
+	}
+	else
 	{
 		printf("Error\n");
 		return (1);
 	}
 
-	printf("%d\n", number_of_coins(cents));
-
+	printf("%d\n", count);
 	return (0);
-}
-
-/**
- * is_positive_number - Check if a string contains only digits
- * @number: The string to check
- *
- * Return: 1 if string contains only digits, 0 otherwise
- */
-int is_positive_number(char *number)
-{
-	int i;
-
-	for (i = 0; number[i] != '\0'; i++)
-	{
-		if (!isdigit(number[i]))
-			return (0);
-	}
-
-	return (1);
-}
-
-/**
- * number_of_coins - Determine the minimum number of coins to make change
- * @cents: The amount of change
- *
- * Return: The minimum number of coins
- */
-int number_of_coins(int cents)
-{
-	int coins = 0;
-
-	coins += (cents / 25);
-	cents %= 25;
-
-	coins += (cents / 10);
-	cents %= 10;
-
-	coins += (cents / 5);
-	cents %= 5;
-
-	coins += (cents / 2);
-	cents %= 2;
-
-	coins += cents;
-
-	return (coins);
 }
