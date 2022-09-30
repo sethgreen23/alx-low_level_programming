@@ -34,12 +34,14 @@ int main(int argc, char *argv[])
 	int count, i, number;
 
 	count = 0;
+	if (argc > 1)
+{
 	for (i = 1; i < argc; i++)
 	{
 		if (check_number(argv[i]))
 		{
 			number = atoi(argv[i]);
-			count += atoi(number);
+			count += number;
 		}
 		else
 		{
@@ -47,6 +49,7 @@ int main(int argc, char *argv[])
 			return (1);
 		}
 	}
+}
 	printf("%d\n", count);
 	return (0);
 }
