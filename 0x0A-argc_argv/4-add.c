@@ -15,8 +15,8 @@ int check_number(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (!isdigit(str[i])
-				return (0);
+		if (!isdigit(str[i]))
+			return (0);
 	}
 	return (1);
 }
@@ -36,9 +36,9 @@ int main(int argc, char *argv[])
 	count = 0;
 	for (i = 1; i < argc; i++)
 	{
-		number = argv[i];
 		if (check_number(argv[i]))
 		{
+			number = atoi(argv[i]);
 			count += atoi(number);
 		}
 		else
