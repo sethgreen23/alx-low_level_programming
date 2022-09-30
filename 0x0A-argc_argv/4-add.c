@@ -31,14 +31,15 @@ int check_number(char *str)
  */
 int main(int argc, char *argv[])
 {
-	int count, i;
+	int count, i, number;
 
 	count = 0;
 	for (i = 1; i < argc; i++)
 	{
+		number = argv[i];
 		if (check_number(argv[i]))
 		{
-			count += atoi(argv[i]);
+			count += atoi(number);
 		}
 		else
 		{
