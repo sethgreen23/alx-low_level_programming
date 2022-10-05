@@ -29,7 +29,7 @@ char **strtow(char *str)
 		{
 			count_word++;
 		}
-		if (*iterator == 32 && *(iterator - 1) != 32 && count_word != 0)
+		if ((*iterator == 32 && *(iterator - 1) != 32 && count_word != 0) || *(iterator + 1) == '\0')
 		{
 		count_words++;
 		count_word = 0;
@@ -48,7 +48,7 @@ char **strtow(char *str)
 		{
 			count_word++;
 		}
-		if (*iterator == 32 && *(iterator - 1) != 32 && count_word != 0)
+		if ((*iterator == 32 && *(iterator - 1) != 32 && count_word != 0) || *(iterator + 1) == '\0')
 		{
 				*(double_tab + count_tab) = malloc(count_word + 1);
 				if (*(double_tab + count_tab) == NULL)
@@ -68,7 +68,7 @@ char **strtow(char *str)
 			double_tab[count_words][count_word] = *iterator;
 			count_word++;
 		}
-		if (*iterator == 32 && *(iterator - 1) != 32 && count_word != 0)
+		if ((*iterator == 32 && *(iterator - 1) != 32 && count_word != 0) || *(iterator + 1) == '\0')
 		{
 			double_tab[count_words][count_word] = '\0';
 			count_words++;
