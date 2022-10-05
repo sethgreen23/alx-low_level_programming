@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
  * strtow - string to words
  *
@@ -16,7 +17,7 @@ char **strtow(char *str)
 	char *iterator;
 	char **double_tab;
 
-	if (str == NULL || str == "")
+	if (str == NULL || strlen(str) == 0)
 		return (NULL);
 
 	count_word = 0;
