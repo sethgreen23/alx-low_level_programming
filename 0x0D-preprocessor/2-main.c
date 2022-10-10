@@ -3,7 +3,8 @@
  * main - main function
  * Return: nothing
  */
-void main(void)
+int main(void)
 {
 	printf("%s\n", __FILE__);
+	return (0);
 }
