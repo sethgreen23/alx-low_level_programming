@@ -25,11 +25,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (o == NULL)
 	{
 		free(o);
+		free(n);
 		return (NULL);
 	}
-	d = malloc(sizeof(struct dog*));
+	d = malloc(sizeof(struct dog *));
 	if (d == NULL)
 	{
+		free(n);
+		free(o);
 		free(d);
 		return (NULL);
 	}
