@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include <sitdio.h>
 #include <stdlib.h>
-#include "calc.h"
+#include "3-calc.h"
 /**
  * main - function main
  * @argc: the number of arguments
