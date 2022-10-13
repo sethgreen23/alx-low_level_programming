@@ -5,7 +5,7 @@
  * print_numbers - sum of all paramethers
  * @n: number of element s
  * @separator: the separator
- * Return: sum of all integers
+ * Return: nothing
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
@@ -18,7 +18,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	if (separator)
 		separator = "";
 	printf("%d", va_arg(ap, int);
-	for (i = 0; i < n; i++)
+	for (i = 1; i < n; i++)
 		printf("%s%d", separator, va_arg(ap, int));
 	printf("\n");
 }
