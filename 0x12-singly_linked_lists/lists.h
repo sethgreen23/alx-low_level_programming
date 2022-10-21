@@ -4,16 +4,16 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * struct _list - structure for printing various types
+ * struct list_s - structure for printing various types
  * @str: string
  * @len: length of the string
  * @next: next pointer
  */
-typedef struct _list
+typedef struct list_s
 {
 	char *str;
 	int len;
-	struct _list *next;
+	struct list_s *next;
 } list_t;
 
 int _putchar(char c);
