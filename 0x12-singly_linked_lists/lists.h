@@ -17,7 +17,7 @@ typedef struct _list
 {
 	char *str;
 	int len;
-	list_t *next;
+	struct _list *next;
 } list_t;
 
 #endif
