@@ -6,13 +6,15 @@
  */
 size_t print_list(const list_t *h)
 {
-	size_t count = 0;
-	list_t *p = h;
+	size_t count;
+	const list_t *p;
 
 	if (h == NULL)
 	{
 		exit(EXIT_FAILURE);
 	}
+	count = 0;
+	p = h;
 	while (p != NULL)
 	{
 		if (p->str == NULL)
