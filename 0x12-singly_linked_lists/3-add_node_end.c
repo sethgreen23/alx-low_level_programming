@@ -10,7 +10,7 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	int count, i;
+	int count;
 	list_t *current, *the_one;
 	char *st;
 
@@ -21,8 +21,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	{
 		return (NULL);
 	}
-	count = 0;
-	for (i = 0; str[i]; count++, i++)
+	for (i = 0; str[i]; i++)
 	;
 	st = strdup(str);
 	if (st == NULL)
@@ -31,7 +30,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	}
 	the_one->str = st;
-	the_one->len = count;
+	the_one->len = i;
 	the_one->next = NULL;
 	if (*head == NULL)
 	{
