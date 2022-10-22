@@ -10,7 +10,7 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	int count;
+	int i;
 	list_t *current, *the_one;
 	char *st;
 
