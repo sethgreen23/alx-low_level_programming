@@ -19,7 +19,7 @@ int main(void)
 			if (((i * 10 + j) / (j * 10 + i)) >= 1)
 				continue;
 			putchar(i + '0');
-			putchar(i + '0');
+			putchar(j + '0');
 			if (i == 8 && j == 9)
 				continue;
 			putchar(',');
