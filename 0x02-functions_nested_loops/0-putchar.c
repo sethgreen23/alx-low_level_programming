@@ -4,7 +4,7 @@
  * main - function main
  *
  * Description: print _putchar
- * Retun: Nothing
+ * Return: Nothing
  */
 
 int main(void)
