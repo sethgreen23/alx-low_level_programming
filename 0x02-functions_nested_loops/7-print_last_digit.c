@@ -23,6 +23,6 @@ int print_last_digit(int n)
 	{
 		result = 0;
 	}
-	printf("%d", result);
+	_putchar(result + '0');
 	return (result);
 }
