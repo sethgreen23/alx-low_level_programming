@@ -17,14 +17,3 @@ void print_alphabet(void)
 	}
 	_putchar('\n');
 }
-
-/**
- * main - function main
- *
- * Return: nothing
- */
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
