@@ -14,18 +14,15 @@ int print_last_digit(int n)
 	if (last_digit > 0)
 	{
 		_putchar(last_digit);
-		result = last_digit;
 	}
 	else if (last_digit < 0)
 	{
 		result = last_digit * -1;
-		_putchar(result);
 	}
 	else
 	{
 		result = 0;
-		_putchar(0);
 	}
-
+	printf("%d", result);
 	return (result);
 }
