@@ -83,7 +83,7 @@ void print_zero_line(int i)
 	counter = 0;
 	if (i == 0)
 	{
-		while (++counter < 9)
+		while (counter++ < 9)
 		{
 			_putchar(i + '0');
 			_putchar(',');
