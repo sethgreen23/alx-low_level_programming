@@ -14,4 +14,5 @@ void times_table(void);
 void print_space(int result, int decimal, int element, int i, int j);
 void print_zero_line(int i);
 int add(int, int);
+void print_to_98(int n);
 #endif
