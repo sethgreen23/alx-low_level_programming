@@ -69,3 +69,24 @@ void print_space(int result, int decimal, int element, int i, int j)
 		_putchar(' ');
 	}
 }
+/**
+ * print_zero_line - print the zero line
+ * @i: number
+ *
+ * Result: nothing
+ */
+void print_zero_line(int i)
+{
+	int counter;
+
+	counter = 0;
+	while (i == 0)
+	{
+		_putchar(i + '0');
+		_putchar(',');
+		_putchar(' ');
+		_putchar(' ');
+	}
+	_putchar(i + '0');
+	_putchar('\n');
+}
