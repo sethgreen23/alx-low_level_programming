@@ -62,7 +62,7 @@ void print_space(int result, int decimal, int element, int i, int j)
 	if (result > 9)
 	{
 		_putchar(' ');
-	}i
+	}
 	else
 	{
 		_putchar(' ');
