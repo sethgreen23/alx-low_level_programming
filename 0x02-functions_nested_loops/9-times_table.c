@@ -11,6 +11,7 @@ void times_table(void)
 
 	for (i = 0; i <= 9; ++i)
 	{
+		print_zero_line(i);
 		for (j = 0; j <= 9; ++j)
 		{
 			result = i * j;
@@ -80,13 +81,16 @@ void print_zero_line(int i)
 	int counter;
 
 	counter = 0;
-	while (i == 0)
+	if (i == 0)
 	{
+		while (++counter < 9)
+		{
+			_putchar(i + '0');
+			_putchar(',');
+			_putchar(' ');
+			_putchar(' ');
+		}
 		_putchar(i + '0');
-		_putchar(',');
-		_putchar(' ');
-		_putchar(' ');
+		_putchar('\n');
 	}
-	_putchar(i + '0');
-	_putchar('\n');
 }
