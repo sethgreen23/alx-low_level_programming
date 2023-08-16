@@ -11,7 +11,6 @@ void times_table(void)
 
 	for (i = 0; i <= 9; ++i)
 	{
-		print_zero_line(i);
 		for (j = 0; j <= 9; ++j)
 		{
 			result = i * j;
@@ -21,7 +20,7 @@ void times_table(void)
 			{
 				if (result < 10)
 				{
-					_putchar(j + '0');
+					_putchar(result + '0');
 				}
 				else
 				{
@@ -51,7 +50,7 @@ void print_space(int result, int decimal, int element, int i, int j)
 {
 	if (result < 10)
 	{
-		_putchar(j + '0');
+		_putchar(result + '0');
 	}
 	else
 	{
@@ -68,29 +67,5 @@ void print_space(int result, int decimal, int element, int i, int j)
 	{
 		_putchar(' ');
 		_putchar(' ');
-	}
-}
-/**
- * print_zero_line - print the zero line
- * @i: number
- *
- * Result: nothing
- */
-void print_zero_line(int i)
-{
-	int counter;
-
-	counter = 0;
-	if (i == 0)
-	{
-		while (counter++ < 9)
-		{
-			_putchar(i + '0');
-			_putchar(',');
-			_putchar(' ');
-			_putchar(' ');
-		}
-		_putchar(i + '0');
-		_putchar('\n');
 	}
 }
