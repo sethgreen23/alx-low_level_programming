@@ -57,12 +57,12 @@ void print_space(int result, int decimal, int element, int i, int j)
 		_putchar(decimal + '0');
 		_putchar(element + '0');
 	}
-	_putchar(' ');
+	_putchar(',');
 	result = i * (j + 1);
 	if (result > 9)
 	{
 		_putchar(' ');
-	}
+	}i
 	else
 	{
 		_putchar(' ');
