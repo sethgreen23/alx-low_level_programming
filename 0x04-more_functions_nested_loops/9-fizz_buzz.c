@@ -34,10 +34,10 @@ int main(void)
 
 		if (i == 100)
 		{
-			_putchar('\n');
+			printf("\n");
 		}
 		else
-			_putchar(' ');
+			printf(" ");
 	}
 	return (0);
 }
