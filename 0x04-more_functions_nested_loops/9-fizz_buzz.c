@@ -33,7 +33,10 @@ int main(void)
 		}
 
 		if (i == 100)
-			/* _putchar('\n'); */
+		{
+			_putchar(' ');
+			_putchar('\n');
+		}
 		else
 			_putchar(' ');
 	}
