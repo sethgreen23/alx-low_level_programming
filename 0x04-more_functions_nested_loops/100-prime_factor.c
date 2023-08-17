@@ -14,7 +14,7 @@ int main(void)
 
 	n = 612852475143;
 	state = 0;
-	for (i = 2; i < n; i++)
+	for (i = 2; i < sqrt(n) * 70; i++)
 	{
 		if (n % i == 0)
 		{
