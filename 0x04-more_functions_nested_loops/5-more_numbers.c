@@ -16,7 +16,7 @@ void more_numbers(void)
 		for (j = 0; j < 15; j++)
 		{
 			if (j < 10)
-				_putchar(j);
+				_putchar(j + '0');
 			else
 			{
 				decimal = j / 10;
@@ -25,6 +25,6 @@ void more_numbers(void)
 				_putchar(element + '0');
 			}
 		}
-		_putchar('\n')
+		_putchar('\n');
 	}
 }
