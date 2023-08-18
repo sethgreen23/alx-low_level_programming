@@ -25,6 +25,7 @@ void print_number(int n)
 		}
 		while (n / max_devisor == 0)
 		{
+			n %= max_devisor;
 			max_devisor /= 10;
 		}
 		while (max_devisor != 1)
