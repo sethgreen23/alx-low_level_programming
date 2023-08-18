@@ -14,6 +14,7 @@ void print_number(int n)
 
 	m = 1;
 	c = 1;
+	num = n;
 	while (c)
 	{
 		if (num / (m * 10) > 0)
