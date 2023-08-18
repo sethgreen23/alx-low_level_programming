@@ -10,21 +10,21 @@
  */
 void print_number(int n)
 {
-	int m, c;
+	long m, c, num;
 
 	m = 1;
 	c = 1;
 	while (c)
 	{
-		if (n / (m * 10) > 0)
+		if (num / (m * 10) > 0)
 			m *= 10;
 		else
 			c = 0;
 	}
 	while (m != 1)
 	{
-		_putchar((n / m) % 10 + '0');
+		_putchar((num / m) % 10 + '0');
 		m /= 10;
 	}
-	_putchar(n % 10 + '0');
+	_putchar(num % 10 + '0');
 }
