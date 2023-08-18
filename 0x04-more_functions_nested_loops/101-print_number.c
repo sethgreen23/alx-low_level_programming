@@ -10,7 +10,7 @@
  */
 void print_number(int n)
 {
-	long m, c, num;
+	int m, c, num;
 
 	m = 1;
 	c = 1;
