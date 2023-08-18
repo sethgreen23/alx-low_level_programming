@@ -16,7 +16,10 @@ void print_number(int n)
 	c = 1;
 	num = n;
 	if (num < 0)
+	{
 		num *= -1;
+		_putchar('-');
+	}
 	while (c)
 	{
 		if (num / (m * 10) > 0)
