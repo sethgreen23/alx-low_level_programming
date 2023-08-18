@@ -35,7 +35,6 @@ void print_number(int n)
 			max_devisor /= 10;
 			_putchar(result + '0');
 		}
-		result = n % 10;
-		_putchar(result + '0');
+		_putchar(n + '0');
 	}
 }
