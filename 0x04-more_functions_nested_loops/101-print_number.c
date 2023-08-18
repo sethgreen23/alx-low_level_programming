@@ -10,31 +10,21 @@
  */
 void print_number(int n)
 {
-	int max_devisor;
-	int result;
+	int m, c;
 
-	max_devisor = 1000000000;
-	if (n == 0)
-		_putchar('0');
-	else
+	m = 1;
+	c = 1;
+	while (c)
 	{
-		if (n < 0)
-		{
-			putchar('-');
-			n *= -1;
-		}
-		while (n / max_devisor == 0)
-		{
-			n %= max_devisor;
-			max_devisor /= 10;
-		}
-		while (max_devisor != 1)
-		{
-			result = n / max_devisor;
-			n %= max_devisor;
-			max_devisor /= 10;
-			_putchar(result + '0');
-		}
-		_putchar(n + '0');
+		if (n / (m * 10) > 0)
+			m *= 10;
+		else
+			c = 0;
 	}
+	while (m != 1)
+	{
+		_putchar((n / m) % 10 + '0');
+		m /= 10;
+	}
+	_putchar(n % 10 + '0');
 }
