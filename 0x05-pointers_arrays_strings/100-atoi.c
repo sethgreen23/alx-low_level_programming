@@ -38,10 +38,10 @@ int _atoi(char *s)
 	}
 	while (multiplier != 1)
 	{
-		result += multiplier * ((*s) - 48);
+		result += multiplier * ((*s) - 48) * sign;
 		s++;
 		multiplier /= 10;
 	}
-	result = (result + (*s) - 48) * sign;
+	result = result + ((*s) - 48) * sign;
 	return (result);
 }
