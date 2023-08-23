@@ -19,13 +19,13 @@ int _strcmp(char *s1, char *s2)
 	{
 		if (*s1_clone > *s2_clone)
 		{
-			result = -15;
+			result = 15;
 			flag = 1;
 			break;
 		}
 		else if (*s1_clone < *s2_clone)
 		{
-			result = 15;
+			result = -15;
 			flag = 1;
 			break;
 		}
