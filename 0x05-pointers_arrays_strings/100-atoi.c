@@ -11,7 +11,7 @@ int _atoi(char *s)
 	int minus, plus, sign, len, multiplier, result;
 	char *slen;
 
-	minus = 0, plus = 0, len = 0, multiplier = 1;
+	minus = 0, plus = 0, len = 0, multiplier = 1, result = 0;
 	while ((*s < 48 || *s > 57) && *s != '\0')
 	{
 		if (*s == '-')
