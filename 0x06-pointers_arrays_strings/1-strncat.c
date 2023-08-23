@@ -10,7 +10,7 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	char *dest_clone, src_clone;
+	char *dest_clone, *src_clone;
 	int i;
 
 	dest_clone = dest, src_clone = src;
