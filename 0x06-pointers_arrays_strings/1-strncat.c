@@ -14,7 +14,7 @@ char *_strncat(char *dest, char *src, int n)
 	int i;
 
 	dest_clone = dest, src_clone = src;
-	for (; dest_clone != '\0'; dest_clone++)
+	for (; *dest_clone != '\0'; dest_clone++)
 	;
 	for (i = 0; i < n && *src_clone != '\0'; dest_clone++, src_clone++, i++)
 		*dest_clone = *src_clone;
