@@ -11,12 +11,8 @@ int _atoi(char *s)
 	int minus, plus, sign, len, multiplier, result;
 	char *slen;
 
-	minus = 0;
-	plus = 0;
-	len = 0;
-	multiplier = 1;
-	result = 0;
-	while (*s < 48 || *s > 57)
+	minus = 0, plus = 0, len = 0, multiplier = 1;
+	while ((*s < 48 || *s > 57) && *s != '\0')
 	{
 		if (*s == '-')
 			minus++;
@@ -24,24 +20,31 @@ int _atoi(char *s)
 			plus++;
 		s++;
 	}
-	sign = (minus > plus) ? -1 : (plus > minus) ? 1 : 1;
-	slen = s;
-	while (*slen >= 48 && *slen <= 57)
+	if (*s == '\0')
 	{
-		len++;
-		slen++;
+		result = 0;
 	}
-	while (len > 1)
+	else
 	{
-		multiplier *= 10;
-		len--;
+		sign = (minus > plus) ? -1 : (plus > minus) ? 1 : 1;
+		slen = s;
+		while (*slen >= 48 && *slen <= 57)
+		{
+			len++;
+			slen++;
+		}
+		while (len > 1)
+		{
+			multiplier *= 10;
+			len--;
+		}
+		while (multiplier != 1)
+		{
+			result += multiplier * ((*s) - 48) * sign;
+			s++;
+			multiplier /= 10;
+		}
+		result = result + ((*s) - 48) * sign;
 	}
-	while (multiplier != 1)
-	{
-		result += multiplier * ((*s) - 48) * sign;
-		s++;
-		multiplier /= 10;
-	}
-	result = result + ((*s) - 48) * sign;
 	return (result);
 }
