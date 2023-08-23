@@ -19,13 +19,13 @@ int _strcmp(char *s1, char *s2)
 	{
 		if (*s1_clone > *s2_clone)
 		{
-			result = -1;
+			result = -15;
 			flag = 1;
 			break;
 		}
 		else if (*s1_clone < *s2_clone)
 		{
-			result = 1;
+			result = 15;
 			flag = 1;
 			break;
 		}
@@ -38,11 +38,11 @@ int _strcmp(char *s1, char *s2)
 		}
 		else if (*s1_clone != '\0' && *s2_clone == '\0')
 		{
-			result = -1;
+			result = -15;
 		}
 		else if (*s1_clone == '\0' && *s2_clone != '\0')
 		{
-			result = 1;
+			result = 15;
 		}
 	}
 	return (result);
