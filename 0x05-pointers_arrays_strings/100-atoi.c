@@ -26,7 +26,7 @@ int _atoi(char *s)
 	}
 	else
 	{
-		sign = (minus > plus) ? -1 : (plus > minus) ? 1 : 1;
+		sign = (minus % 2 != 0) ? -1 : 1;
 		slen = s;
 		while (*slen >= 48 && *slen <= 57)
 		{
