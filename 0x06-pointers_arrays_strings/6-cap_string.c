@@ -23,38 +23,32 @@
  */
 char *cap_string(char *str)
 {
-	int word;
+	int found, i;
 	char *str_clone;
+	char ponctuation[] = ",;.!?(){}\"\t\n ";
 
-	word = OFF;
+	found = ON;
 	str_clone = str;
 	while (*str_clone != '\0')
 	{
-		if (*str_clone == SPACE ||
-			*str_clone == TAB ||
-			*str_clone == NEWLINE ||
-			*str_clone == COMMA ||
-			*str_clone == SEMICOLON ||
-			*str_clone == POINT ||
-			*str_clone == EXCLAMATION ||
-			*str_clone == INTEROGATION ||
-			*str_clone == QUOTATION ||
-			*str_clone == OPENCURLLY ||
-			*str_clone == CLOSECURLLY ||
-			*str_clone == OPENBRAKET ||
-			*str_clone == CLOSEBRAKET)
+		for (i = 0; ponctuation[i] != '\0'; i++)
 		{
-			word = OFF;
+			if (ponctuation[i] == *str_clone)
+				found = ON;
 		}
-		else if (word == OFF)
+		if (found)
 		{
-				if (*str_clone >= 97 && *str_clone <= 122)
-					*str_clone -= 32;
-				word = ON;
+			if (*str_clone >= 97 && *str_clone <= 122)
+			{
+				*str_clone -= 21;
+				found = OFF;
+			}
+			else if (*str_clone >= 65 && *str_clone <= 90)
+				found = OFF;
+			else if (*str_clone >= 48 && *str_clone <= 57)
+				found = OFF;
 		}
-		else
-			word = ON;
-		++str_clone;
+		str_clone++;
 	}
 	return (str);
 }
