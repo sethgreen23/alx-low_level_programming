@@ -9,39 +9,10 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	char *s1_clone, *s2_clone;
-	int result;
-
-	result = 0;
-	s1_clone = s1;
-	s2_clone = s2;
-	for (; *s1_clone != '\0' && *s2_clone != '\0'; s1_clone++, s2_clone++)
+	while (*s1 != '\0' && *s2 != '\0' && (*s1 == *s2))
 	{
-		if (*s1_clone > *s2_clone)
-		{
-			result = 15;
-			break;
-		}
-		else if (*s1_clone < *s2_clone)
-		{
-			result = -15;
-			break;
-		}
+		s1++;
+		s2++;
 	}
-	if (result == 0)
-	{
-		if (*s1_clone == '\0' && *s2_clone == '\0')
-		{
-			result = 0;
-		}
-		else if (*s1_clone != '\0' && *s2_clone == '\0')
-		{
-			result = 15;
-		}
-		else if (*s1_clone == '\0' && *s2_clone != '\0')
-		{
-			result = -15;
-		}
-	}
-	return (result);
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
