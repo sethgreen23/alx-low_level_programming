@@ -53,7 +53,7 @@ char *cap_string(char *str)
 				word = ON;
 		}
 		else
-			wordd = ON;
+			word = ON;
 		++str_clone;
 	}
 	return (str);
