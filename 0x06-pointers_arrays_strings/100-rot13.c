@@ -19,7 +19,10 @@ char *rot13(char *str)
 		for (i = 0; input[i] != '\0'; ++i)
 		{
 			if (input[i] == *str_clone)
+			{
 				*str_clone = output[i];
+				break;
+			}
 		}
 	}
 	return (str);
