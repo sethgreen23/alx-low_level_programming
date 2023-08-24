@@ -12,6 +12,7 @@ int _strcmp(char *s1, char *s2)
 	char *s1_clone, *s2_clone;
 	int result;
 
+	result = 0;
 	s1_clone = s1;
 	s2_clone = s2;
 	for (; *s1_clone != '\0' && *s2_clone != '\0'; s1_clone++, s2_clone++)
