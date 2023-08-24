@@ -40,7 +40,7 @@ char *cap_string(char *str)
 		{
 			if (*str_clone >= 97 && *str_clone <= 122)
 			{
-				*str_clone -= 21;
+				*str_clone -= 32;
 				found = OFF;
 			}
 			else if (*str_clone >= 65 && *str_clone <= 90)
