@@ -12,6 +12,7 @@
 #define CLOSECURLLY ')'
 #define OPENBRAKET '{'
 #define CLOSEBRAKET '}'
+#define TAB '\t'
 #define ON 1
 #define OFF 0
 /**
@@ -30,6 +31,7 @@ char *cap_string(char *str)
 	while (*str_clone != '\0')
 	{
 		if (*str_clone == SPACE ||
+			*str_clone == TAB ||
 			*str_clone == NEWLINE ||
 			*str_clone == COMMA ||
 			*str_clone == SEMICOLON ||
