@@ -10,9 +10,8 @@
 int _strcmp(char *s1, char *s2)
 {
 	char *s1_clone, *s2_clone;
-	int flag, result;
+	int result;
 
-	flag = 0;
 	s1_clone = s1;
 	s2_clone = s2;
 	for (; *s1_clone != '\0' && *s2_clone != '\0'; s1_clone++, s2_clone++)
@@ -20,17 +19,15 @@ int _strcmp(char *s1, char *s2)
 		if (*s1_clone > *s2_clone)
 		{
 			result = 15;
-			flag = 1;
 			break;
 		}
 		else if (*s1_clone < *s2_clone)
 		{
 			result = -15;
-			flag = 1;
 			break;
 		}
 	}
-	if (!flag)
+	if (result == 0)
 	{
 		if (*s1_clone == '\0' && *s2_clone == '\0')
 		{
