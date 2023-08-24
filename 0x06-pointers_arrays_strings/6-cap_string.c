@@ -23,10 +23,10 @@
  */
 char *cap_string(char *str)
 {
-	int found;
+	int word;
 	char *str_clone;
 
-	found = OFF;
+	word = OFF;
 	str_clone = str;
 	while (*str_clone != '\0')
 	{
@@ -44,16 +44,16 @@ char *cap_string(char *str)
 			*str_clone == OPENBRAKET ||
 			*str_clone == CLOSEBRAKET)
 		{
-			found = OFF;
+			word = OFF;
 		}
-		else if (found == OFF)
+		else if (word == OFF)
 		{
 				if (*str_clone >= 97 && *str_clone <= 122)
 					*str_clone -= 32;
-				found = ON;
+				word = ON;
 		}
 		else
-			found = ON;
+			wordd = ON;
 		++str_clone;
 	}
 	return (str);
