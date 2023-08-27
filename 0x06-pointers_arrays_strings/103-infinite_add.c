@@ -26,7 +26,7 @@ void reverseStr(char *str)
  * @s1: string one
  * @s2: string two
  * @r: resulting string
- * @i; increment number
+ * @i: increment number
  * @kp: keep number
  * @res: rest number
  * @s_r: size of the buffer
