@@ -99,7 +99,7 @@ void calc_one(char *s, char *r, int *i, int *kp, int *res, int s_r)
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int keep, rest, result, i;
-	int len, len2;
+	int len1, len2;
 	char *n1_copy, *n2_copy;
 
 	n1_copy = (char *)malloc(len1 + 1);
