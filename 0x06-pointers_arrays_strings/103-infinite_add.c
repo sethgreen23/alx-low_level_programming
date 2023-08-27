@@ -111,11 +111,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		calc_one(n1, r, &i, &keep, &rest, size_r);
 	}
 	if (i >= size_r)
-	{
-		r[0] = '0';
-		r[1] = '\0';
-	}
-	else
+		return (0);
+	if (i < size_r)
 	{
 		if (keep > 0)
 		{
