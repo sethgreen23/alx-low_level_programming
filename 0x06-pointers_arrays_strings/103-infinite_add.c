@@ -104,9 +104,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	n1_copy = (char *)malloc(len1 + 1);
 	n2_copy = (char *)malloc(len2 + 1);
+	keep = 0, rest = 0, i = 0;
 	strcpy(n1_copy, n1);
 	strcpy(n2_copy, n2);
-	keep = 0, rest = 0, i = 0;
 	reverseStr(n1_copy);
 	reverseStr(n2_copy);
 	calc_two(n1_copy, n2_copy, r, &i, &keep, &rest, size_r);
