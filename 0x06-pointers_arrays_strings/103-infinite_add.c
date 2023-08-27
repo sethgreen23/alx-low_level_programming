@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include "main.h"
 /**
  * reverseStr - reverse a string
@@ -97,18 +99,24 @@ void calc_one(char *s, char *r, int *i, int *kp, int *res, int s_r)
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int keep, rest, result, i;
+	int len, len2;
+	char *n1_copy, *n2_copy;
 
+	n1_copy = (char *)malloc(len1 + 1);
+	n2_copy = (char *)malloc(len2 + 1);
+	strcpy(n1_copy, n1);
+	strcpy(n2_copy, n2);
 	keep = 0, rest = 0, i = 0;
-	reverseStr(n1);
-	reverseStr(n2);
-	calc_two(n1, n2, r, &i, &keep, &rest, size_r);
-	if (n1[i] == '\0' && n2[i] != '\0')
+	reverseStr(n1_copy);
+	reverseStr(n2_copy);
+	calc_two(n1_copy, n2_copy, r, &i, &keep, &rest, size_r);
+	if (n1_copy[i] == '\0' && n2_copy[i] != '\0')
 	{
-		calc_one(n2, r, &i, &keep, &rest, size_r);
+		calc_one(n2_copy, r, &i, &keep, &rest, size_r);
 	}
-	else if (n1[i] != '\0' && n2[i] == '\0')
+	else if (n1_copy[i] != '\0' && n2_copy[i] == '\0')
 	{
-		calc_one(n1, r, &i, &keep, &rest, size_r);
+		calc_one(n1_copy, r, &i, &keep, &rest, size_r);
 	}
 	if (i >= size_r)
 		return (0);
@@ -122,7 +130,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		}
 	}
 	reverseStr(r);
-	reverseStr(n1);
-	reverseStr(n2);
+	free(n1_copy);
+	free(n2_copy);
 	return (r);
 }
