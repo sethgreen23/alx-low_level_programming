@@ -14,5 +14,5 @@ char *_strchr(char *s, char c)
 	clone = s;
 	for (; *clone != '\0' && *clone != c; clone++)
 	;
-	return (*clone == '\0' ? NULL : clone);
+	return (c == '\0' ? clone : *clone == '\0' ? NULL : clone);
 }
