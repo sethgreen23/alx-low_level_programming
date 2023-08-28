@@ -13,9 +13,10 @@ unsigned int _strspn(char *s, char *accept)
 	unsigned int len;
 	int i, j, found;
 
-	found = 0, len = 0;
+	len = 0;
 	for (i = 0; s[i] != '\0'; i++)
 	{
+		found = 0;
 		for (j = 0; accept[j] != '\0'; j++)
 		{
 			if (s[i] == accept[j])
@@ -25,10 +26,8 @@ unsigned int _strspn(char *s, char *accept)
 				break;
 			}
 		}
-		if (found)
+		if (!found)
 		{
-			found = 0;
-		}
-	}
+			break;
 	return (len);
 }
