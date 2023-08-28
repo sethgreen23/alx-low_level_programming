@@ -25,11 +25,7 @@ unsigned int _strspn(char *s, char *accept)
 				break;
 			}
 		}
-		if (!found || s[i] == '\0')
-		{
-			break;
-		}
-		else
+		if (found)
 		{
 			found = 0;
 		}
