@@ -14,9 +14,9 @@ char *_strpbrk(char *s, char *accept)
 	int found, i;
 
 	clone = s;
+	found = 0;
 	for (; *clone != '\0'; clone++)
 	{
-		found = 0;
 		for (i = 0; accept[i] != '\0'; i++)
 		{
 			if (accept[i] == *clone)
