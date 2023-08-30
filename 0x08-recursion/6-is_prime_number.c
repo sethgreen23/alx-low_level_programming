@@ -10,7 +10,7 @@
  */
 int _is_prime(int counter, int n)
 {
-	if (counter >= sqrt(n) + 1)
+	if (counter >= ((int) sqrt(n) + 1))
 		return (1);
 	if (n % counter == 0)
 		return (0);
