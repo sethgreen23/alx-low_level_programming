@@ -11,7 +11,7 @@ int _strlen_rev(char *s, int len)
 {
 	if (*s == '\0')
 		return (len);
-	_strlen_rev(s + 1, len + 1);
+	return (strlen_rev(s + 1, len + 1));
 }
 /**
  * reverse_str - go to the end of the string and return a pointer
@@ -23,7 +23,7 @@ char *reverse_str(char *s)
 {
 	if (*s == '\0')
 		return (s - 1);
-	reverse_str(s + 1);
+	return (reverse_str(s + 1));
 }
 /**
  * print_str - print the string on reverse
