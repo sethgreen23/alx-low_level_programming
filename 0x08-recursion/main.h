@@ -10,4 +10,7 @@ int is_prime_number(int n);
 int is_palindrome(char *s);
 int wildcmp(char *s1, char *s2);
 int _putchar(char c);
+int _strlen_rev(char *s, int len);
+char *reverse_str(char *s);
+void print_str(char *str, int len);
 #endif

@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include "main.h"
+/**
+ * _strlen_rev - count the string length recursively
+ * @s: string
+ * @len: length
+ *
+ * Return: length of the string
+ */
+int _strlen_rev(char *s, int len)
+{
+	if (*s == '\0')
+		return (len);
+	_strlen(s + 1, len + 1);
+}
+/**
+ * reverse_str - go to the end of the string and return a pointer
+ * @s: string
+ *
+ * Return: pointer ot the end of the string
+ */
+char *reverse_str(char *s)
+{
+	if (*s == '\0')
+		return (s - 1);
+	reverse_str(s + 1);
+}
+/**
+ * print_str - print the string on reverse
+ * @str: string
+ * @len: length
+ *
+ * Return: nothing
+ */
+void print_str(char *str, int len)
+{
+	if (len < 0)
+		return;
+	_putchar(*str);
+	print_str(str - 1, len - 1);
+}
