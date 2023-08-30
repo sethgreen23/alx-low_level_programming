@@ -12,6 +12,6 @@ void _print_rev_recursion(char *s)
 	char *reverse_string;
 
 	len = 0;
-	len = _strlen(s, len);
+	len = _strlen_rev(s, len);
 	print_str(reverse_string, len - 1);
 }
