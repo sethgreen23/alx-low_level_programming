@@ -24,9 +24,7 @@ int _is_prime(int counter, int n)
  */
 int is_prime_number(int n)
 {
-	int root;
-
 	if (n == 2)
 		return (1);
-	return (_is_prime(1, n));
+	return (_is_prime(2, n));
 }
