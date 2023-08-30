@@ -15,4 +15,5 @@ char *reverse_str(char *s);
 void print_str(char *str, int len);
 int _sqrt(int med, int n);
 int _is_prime(int counter, int n);
+int is_pal(char *s, int i, int j);
 #endif
