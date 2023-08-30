@@ -13,4 +13,5 @@ int _putchar(char c);
 int _strlen_rev(char *s, int len);
 char *reverse_str(char *s);
 void print_str(char *str, int len);
+int _sqrt(int med, int n);
 #endif
