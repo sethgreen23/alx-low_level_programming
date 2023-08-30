@@ -10,7 +10,7 @@
  */
 int _is_prime(int counter, int n)
 {
-	if (counter >= (n/2))
+	if (counter >= (n / 2))
 		return (1);
 	if (n % counter == 0)
 		return (0);
