@@ -11,7 +11,7 @@ int _strlen_rev(char *s, int len)
 {
 	if (*s == '\0')
 		return (len);
-	_strlen(s + 1, len + 1);
+	_strlen_rev(s + 1, len + 1);
 }
 /**
  * reverse_str - go to the end of the string and return a pointer
