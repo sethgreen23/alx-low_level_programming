@@ -9,10 +9,10 @@
  */
 int _sqrt(int med, int n)
 {
-	if (med <= 0)
+	if (med > n / 2)
 		return (-1);
 	if ((med * med) != n)
-		return (_sqrt(med - 1, n));
+		return (_sqrt(med + 1, n));
 	else
 		return (med);
 }
@@ -24,8 +24,7 @@ int _sqrt(int med, int n)
  */
 int _sqrt_recursion(int n)
 {
-	int medium;
-
-	medium = n / 2;
-	return (_sqrt(medium, n));
+	if (n == 1)
+		return (1);
+	return (_sqrt(1, n));
 }
