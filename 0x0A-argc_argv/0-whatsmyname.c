@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - main function
- * @argc: arguments array
- * @argv: number of elements in the array
+ * @argc: number of arrays elements
+ * @argv: arguments array
  *
  * Return: 0 on success 1 on error
  */
