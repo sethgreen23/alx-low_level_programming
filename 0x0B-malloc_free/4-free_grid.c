@@ -11,15 +11,10 @@
  */
 void free_grid(int **grid, int height)
 {
-	int i, j, width;
+	int i;
 
 	for (i = 0; i < height; i++)
 	{
-		width = sizeof(grid[i]);
-		for (j = 0; j < width; j++)
-		{
-			free(grid[i][j]);
-		}
 		free(grid[i]);
 	}
 }
