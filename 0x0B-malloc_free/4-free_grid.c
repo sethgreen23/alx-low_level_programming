@@ -11,7 +11,7 @@
  */
 void free_grid(int **grid, int height)
 {
-	size_t i, j, width;
+	int i, j, width;
 
 	for (i = 0; i < height; i++)
 	{
