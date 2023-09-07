@@ -21,7 +21,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		size1 = strlen(s1);
 	if (s2 == NULL || n == 0)
 		size2 = 0;
-	elseif (n < strlen(s2))
+	else if (n < strlen(s2))
 		size2 = n;
 	else if (n >= strlen(s2))
 		size2 = strlen(s2);
