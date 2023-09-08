@@ -10,16 +10,13 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *array, *clone;
-	unsigned int i;
+	void *array;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 	array = (void *)malloc(nmemb * size);
 	if (array == NULL)
 		return (NULL);
-	clone = array;
-	for (i = 0; i < nmemb; i++)
-		*(int *)(clone + i) = 0;
+	memset(array, 0, nmemb * size);
 	return (array);
 }
