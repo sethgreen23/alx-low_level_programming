@@ -11,7 +11,7 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *array, *clone;
-	int i;
+	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
@@ -20,6 +20,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	clone = array;
 	for (i = 0; i < nmemb; i++)
-		*(int *)(array + i) = 0;
+		*(int *)(clone + i) = 0;
 	return (array);
 }
