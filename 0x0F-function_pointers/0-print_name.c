@@ -11,8 +11,7 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	assert(f != NULL);
-	assert(name != NULL);
-
+	if (name == NULL || f == NULL)
+		return;
 	f(name);
 }
