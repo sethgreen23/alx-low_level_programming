@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 #include "function_pointers.h"
 /**
  * print_name - print a name
@@ -10,5 +11,8 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
+	assert(f != NULL);
+	assert(name != NULL);
+
 	f(name);
 }
