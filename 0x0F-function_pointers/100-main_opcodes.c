@@ -15,7 +15,7 @@ void printBytes(void *func, int n)
 	bytes = (char *)func;
 	for (i = 0; i < n; i++)
 	{
-		printf("%x", bytes[i] & 0xff);
+		printf("%.2hhx", bytes[i]);
 		if (i < n - 1)
 			printf(" ");
 	}
