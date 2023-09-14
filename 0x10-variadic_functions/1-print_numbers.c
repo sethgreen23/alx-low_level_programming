@@ -40,9 +40,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	int current;
 
 	if (separator == NULL)
-		return;
-	if (n < 0)
-		return;
+		return
 	va_start(lst, n);
 	for (i = 0; i < n; i++)
 	{
