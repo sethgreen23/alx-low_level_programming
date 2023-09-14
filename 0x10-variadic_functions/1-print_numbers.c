@@ -12,10 +12,23 @@
 void print(int n)
 {
 	char num[32];
-	int length;
+	int i, j;
 
-	length = snprintf(buf, sizeof(buf), "%d", num);
-	write(1, buf, length);
+	if (n < 0)
+	{
+		putchar('-');
+		n = -n;
+	}
+	i = 0;
+	do {
+		num[i] = (n % 10) + '0';
+		n /= 10;
+		i++;
+	} while (n > 0);
+	for (j = i - 1; j >= 0; j--)
+	{
+		putchar(num[j]);
+	}
 }
 /**
  * print_numbers - print numbers followed by a new line
@@ -38,8 +51,11 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		current = va_arg(lst, int);
 		print(current);
 		if (i < n - 1)
-			write(1, ", ", 2);
+		{
+			putchar(',');
+			putchar(' ');
+		}
 	}
 	va_end(lst);
-	write(1, "\n", 1);
+	putchar('\n');
 }
