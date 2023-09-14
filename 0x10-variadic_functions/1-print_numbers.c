@@ -23,7 +23,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		current = va_arg(lst, int);
 		printf("%d", current);
-		if (i < n - 1)
+		if (i != n - 1)
 			printf("%s", separator);
 	}
 	va_end(lst);
