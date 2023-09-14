@@ -23,6 +23,6 @@ int sum_them_all(const unsigned int n, ...)
 		current = va_arg(lst, int);
 		s += current;
 	}
-	var_end(lst);
+	va_end(lst);
 	return (s);
 }
