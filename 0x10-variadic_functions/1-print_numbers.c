@@ -12,19 +12,10 @@
 void print(int n)
 {
 	char num[32];
-	int i, j;
+	int length;
 
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n = -n;
-	}
-	do {
-		num[i++] = (n % 10) + '0';
-		n /= 10;
-	} while (n > 0);
-	for (j = i - 1; j >= 0; j--)
-		write(1, num + j, 1);
+	length = snprintf(buf, sizeof(buf), "%d", num);
+	write(1, buf, length);
 }
 /**
  * print_numbers - print numbers followed by a new line
