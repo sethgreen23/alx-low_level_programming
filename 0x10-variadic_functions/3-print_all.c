@@ -1,71 +1,51 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
 #include "variadic_functions.h"
+
 /**
- * print_sep - print serpartor
- * @format: format string
- * @position: starting position
- * @found: found character
- *
- * Return: nothing
+ * print_all - Prints all of the arguments when specified
+ * @format: specifies the necessary operations
+ * Return: void
  */
-void print_sep(const char *format, int position, int found)
-{
-	while (format[position] != '\0' && found)
-	{
-		if (format[position] == 'c' ||
-		format[position] == 'i' ||
-		format[position] == 'f' ||
-		format[position] == 's')
-		{
-			printf(", ");
-			break;
-		}
-		position++;
-	}
-}
-/**
- * print_all - prints anything
- * @format: format string
- *
- * Return: nothing
- */
+
 void print_all(const char * const format, ...)
 {
-	va_list lst;
-	int i, found, j;
+	int i;
+	int flag;
 	char *str;
+	va_list a_list;
 
-	va_start(lst, format);
+	va_start(a_list, format);
+	i = 0;
 	while (format != NULL && format[i] != '\0')
 	{
-		found = 0;
 		switch (format[i])
 		{
 			case 'c':
-				printf("%c", va_arg(lst, int));
-				found = 1;
+				printf("%c", va_arg(a_list, int));
+				flag = 0;
 				break;
 			case 'i':
-				printf("%d", va_arg(lst, int));
-				found = 1;
+				printf("%i", va_arg(a_list, int));
+				flag = 0;
 				break;
 			case 'f':
-				printf("%f", va_arg(lst, double));
-				found = 1;
+				printf("%f", va_arg(a_list, double));
+				flag = 0;
 				break;
 			case 's':
-				str = va_arg(lst, char *);
-				found = 1;
+				str = va_arg(a_list, char*);
 				if (str == NULL)
 					str = "(nil)";
 				printf("%s", str);
+				flag = 0;
+				break;
+			default:
+				flag = 1;
 				break;
 		}
-		print_sep(format, i + 1, found);
+		if (format[i + 1] != '\0' && flag == 0)
+			printf(", ");
 		i++;
 	}
-	va_end(lst);
 	printf("\n");
+	va_end(a_list);
 }
