@@ -58,7 +58,9 @@ void print_all(const char * const format, ...)
 			case 's':
 				str = va_arg(lst, char *);
 				found = 1;
-				printf("%s", str || "(nil)");
+				if (str == NULL)
+					str = "(nil)";
+				printf("%s", str);
 				break;
 		}
 		print_sep(format, i + 1, found);
