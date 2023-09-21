@@ -11,7 +11,6 @@ main:
 	mov rdi, hello_message;
 	call printf;
 	pop rdi;
-
 	;
 	mov rax, 60;
 	xor rdi, rdi;
