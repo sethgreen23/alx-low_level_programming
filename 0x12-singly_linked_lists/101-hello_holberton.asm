@@ -1,5 +1,5 @@
 section .data
-	hello_message db "Hello, Holberton",10,0 ;
+	hello_message db "Hello, Holberton",10,0;
 
 section .text
 	global main
