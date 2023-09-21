@@ -12,6 +12,6 @@ main:
 	call printf;
 	pop rdi;
 	;
-	mov rax, 60;
+	mov rax, 0;
 	xor rdi, rdi;
 	syscall
