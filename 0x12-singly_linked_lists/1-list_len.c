@@ -8,7 +8,7 @@
 size_t list_len(const list_t *h)
 {
 	size_t count;
-	const list_t *current;
+	const list_t *current = NULL;
 
 	if (h == NULL)
 		return (0);
