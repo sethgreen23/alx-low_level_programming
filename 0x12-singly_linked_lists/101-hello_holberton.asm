@@ -1,10 +1,10 @@
-section .data
-	hello_message db "Hello, Holberton",10,0;
+section .data;
+hello_message db "Hello, Holberton",10,0;
 
-section .text
-	global main
+section .text;
+global main;
 
-extern printf
+extern printf;
 
 main:
 	push rdi;
