@@ -8,11 +8,12 @@
 size_t print_listint(const listint_t *h)
 {
 	size_t count;
-	const listint_t *current = h;
+	const listint_t *current;
 
 	if (h == NULL)
 		return (count);
 	count = 0;
+	current = h;
 	while (current != NULL)
 	{
 		count++;
