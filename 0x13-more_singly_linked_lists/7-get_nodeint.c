@@ -27,11 +27,12 @@ unsigned int len(listint_t *head)
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	const listint_t *current = head;
+	listint_t *current = NULL;
 	unsigned int i = 0;
 
-	if (index > listint_len(current) || current == NULL)
+	if (index > len(head) || head == NULL)
 		return (NULL);
+	current = head;
 	while (i < index)
 	{
 		current = current->next;
