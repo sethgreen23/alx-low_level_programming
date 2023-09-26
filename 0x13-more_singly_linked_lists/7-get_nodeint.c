@@ -1,23 +1,5 @@
 #include "lists.h"
-/**
- * len - length of the list
- * @head: head of list
- *
- * Return: length of a list
- */
-unsigned int len(listint_t *head)
-{
-	unsigned int count = 0;
 
-	if (head == NULL)
-		return (0);
-	while (head != NULL)
-	{
-		count++;
-		head = head->next;
-	}
-	return (count);
-}
 /**
  * get_nodeint_at_index - return the nth node of list_t
  * @head: head of the list
