@@ -16,6 +16,7 @@ const listint_t **save_node(const listint_t **l, int s, const listint_t *h)
 	if (newList == NULL)
 	{
 		free(newList);
+		free(l);
 		exit(98);
 	}
 	for (; i < s - 1; i++)
