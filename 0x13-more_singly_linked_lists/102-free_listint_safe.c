@@ -44,11 +44,14 @@ size_t free_listint_safe(listint_t **h)
 		return (size);
 	while (*h != NULL)
 	{
-		if (*h == list[i])
+		for (i = 0; i < size; i++)
 		{
-			*h = NULL;
-			free(list);
-			return (size);
+			if (*h == list[i])
+			{
+				*h = NULL;
+				free(list);
+				return (size);
+			}
 		}
 		size++;
 		list = save_n(list, size, *h);
