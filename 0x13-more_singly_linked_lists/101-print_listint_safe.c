@@ -1,9 +1,9 @@
 #include "lists.h"
 /**
  * save_node - save the node in a array
- * @list: the list containing the nodes
- * @size: size of the list
- * @head: is the node we will store
+ * @l: the list containing the nodes
+ * @s: size of the list
+ * @h: is the node we will store
  *
  * Return: new list with the new node
  */
