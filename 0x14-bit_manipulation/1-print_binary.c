@@ -21,13 +21,13 @@ void print_binary(unsigned long int n)
 		{
 			if ((n >> bits) & 1)
 			{
-				printf("%d", (n >> bits) & 1);
+				printf("%ld", (n >> bits) & 1);
 				flag = 1;
 			}
 		}
 		else
 		{
-			printf("%d", (n >> bits) & 1);
+			printf("%ld", (n >> bits) & 1);
 		}
 	}
 }
