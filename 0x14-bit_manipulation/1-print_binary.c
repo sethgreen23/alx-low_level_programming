@@ -7,23 +7,28 @@
  */
 void print_binary(unsigned long int n)
 {
-	int flag = 0, i;
+	int flag = 0, bit = 31;
+	unsigned long int i;
 
 	if (n == 0)
 	{
 		_putchar('0');
+		return;
 	}
-	for (i = 1 << 31; i > 0; i = i / 2)
+	for (i = 1 << bit; bit >= 0; i = 1 << bit)
 	{
 		if (flag)
 		{
-			(n & i) ? _putchar('1') : putchar('0');		
+			(n & i) ? _putchar('1') : _putchar('0');		
 		}
 		else
 		{
 			if (n & i)
+			{
 				_putchar('1');
-			flag = 1;
+				flag = 1;
+			}
 		}
+		--bit;
 	}
 }
