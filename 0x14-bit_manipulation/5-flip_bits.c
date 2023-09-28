@@ -10,13 +10,14 @@
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	unsigned long int bits = sizeof(n) * 8;
+	unsigned long int difference = n ^ m, result = 1, i = 0;
 	int count = 0;
 
-	while (bits > 0)
+	for (; i < bits; i++)
 	{
-		if ((get_bit(n, bits - 1)) != get_bit(m, bits - 1))
+		if (result & difference)
 			count++;
-		--bits;
+		result <<= 1;
 	}
-	return (count >> 1);
+	return (count);
 }
