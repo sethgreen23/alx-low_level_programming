@@ -7,7 +7,7 @@
  */
 void print_binary(unsigned long int n)
 {
-	int bits = 31;
+	int bits = sizeof(n) * 8;
 	int flag = 0;
 
 	if (n == 0)
@@ -15,19 +15,17 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 		return;
 	}
-	for (; bits >= 0; bits--)
+	for (; bits > 0; bits--)
 	{
 		if (flag == 0)
 		{
-			if ((n >> bits) & 1)
+			if ((n >> (bits - 1)) & 1)
 			{
-				_putchar(((n >> bits) & 1) + '0');
+				_putchar('1');
 				flag = 1;
 			}
 		}
 		else
-		{
-			_putchar(((n >> bits) & 1) + '0');
-		}
+			((n >> (bits - 1)) & 1) ? _putchar('1') : _putchar('0');
 	}
 }
