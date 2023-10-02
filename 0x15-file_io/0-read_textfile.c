@@ -32,7 +32,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 			return (0);
 		}
 		letter_count += bytes_written;
-		if (letter_count == (ssize_t)letters)
+		if (letter_count <= (ssize_t)letters)
 			break;
 	}
 	return (letter_count);
