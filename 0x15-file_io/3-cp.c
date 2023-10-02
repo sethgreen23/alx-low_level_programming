@@ -36,14 +36,14 @@ int main(int argc, char **argv)
 	o_copy = o;
 	if (close(o) == -1)
 	{
-		fprintf(stderr, "Error: Can't close fd %i\n", o_copy);
+		fprintf(stderr, "Error: Can't close fd %d\n", o_copy);
 		close(o1);
 		exit(100);
 	}
 	o1_copy = o1;
 	if (close(o1) == -1)
 	{
-		fprintf(stderr, "Error: Can't close fd %i\n", o1_copy);
+		fprintf(stderr, "Error: Can't close fd %d\n", o1_copy);
 		exit(100);
 	}
 	return (0);
