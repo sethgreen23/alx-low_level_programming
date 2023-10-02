@@ -9,7 +9,7 @@
  */
 int main(int argc, char **argv)
 {
-	int o, r, w1, o1;
+	int o, r, w1, o1, c, c1;
 	char buffer[BUFFER_SIZE];
 
 	if (argc != 3)
@@ -35,10 +35,18 @@ int main(int argc, char **argv)
 	}
 	if (o == -1 || r == -1)
 	{
-		 fprintf(stderr, "Error: Can't read to %s\n", argv[1]);
-		 exit(98);
+		fprintf(stderr, "Error: Can't read to %s\n", argv[1]);
+		exit(98);
 	}
-	close(o);
-	close(o1);
+	if (close(o) == -1)
+	{
+		fprintf(stderr, "Error: Can't close fd %s\n", o);
+		exit(100);
+	}
+	if (close(o1) == -1)
+	{
+		fprintf(stderr, "Error: Can't close fd %s\n", o1);
+		exit(100);
+	}
 	return (0);
 }
