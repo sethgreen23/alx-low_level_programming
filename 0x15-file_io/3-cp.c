@@ -22,18 +22,13 @@ int main(int argc, char **argv)
 	while ((r = read(o, buffer, BUFFER_SIZE)) > 0)
 	{
 		w1 = write(o1, buffer, r);
-		if (w1 == -1)
+		if (w1 == -1 || o1 == -1)
 		{
 			fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
-	if (o1 == -1)
-	{
-		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
-	if (o == -1)
+	if (r == -1 || o == -1)
 	{
 		fprintf(stderr, "Error: Can't read to %s\n", argv[1]);
 		exit(98);
@@ -41,14 +36,14 @@ int main(int argc, char **argv)
 	o_copy = o;
 	if (close(o) == -1)
 	{
-		fprintf(stderr, "Error: Can't close fd %d\n", o_copy);
+		fprintf(stderr, "Error: Can't close fd %s\n", o_copy);
 		close(o1);
 		exit(100);
 	}
 	o1_copy = o1;
 	if (close(o1) == -1)
 	{
-		fprintf(stderr, "Error: Can't close fd %d\n", o1_copy);
+		fprintf(stderr, "Error: Can't close fd %s\n", o1_copy);
 		exit(100);
 	}
 	return (0);
