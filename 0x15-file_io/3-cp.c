@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 		perror("Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	o = open(argv[1], O_RDWR);
+	o = open(argv[1], O_RDONLY);
 	o1 = open(argv[2], O_CREAT, O_TRUNC | O_RDWR, 0664);
 	while ((r = read(o, buffer, BUFFER_SIZE)) > 0)
 	{
