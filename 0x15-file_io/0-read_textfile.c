@@ -18,23 +18,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 	file_output = open(filename, O_RDONLY);
-	if (file_output == -1)
-	{
-		close(file_output);
+	bytes_read = read(file_output, buffer, letters);
+	bytes_written = write(1, buffer, bytes_read);
+
+	if (file_output == -1
+		|| bytes_read == -1
+		|| bytes_written == -1
+		|| bytes_read != bytes_written)
 		return (0);
-	}
-	while ((bytes_read = read(file_output, buffer, letters)) > 0)
-	{
-		bytes_written = write(1, buffer, bytes_read);
-		if (bytes_written == -1)
-		{
-			close(file_output);
-			return (0);
-		}
-		letter_count += bytes_written;
-		if (letter_count >= (ssize_t)letters)
-			break;
-	}
-	return (letter_count);
+	return (bytes_written);
 
 }
