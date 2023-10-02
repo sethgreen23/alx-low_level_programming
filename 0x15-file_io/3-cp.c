@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 	}
 	if (o == -1 || r == -1)
 	{
-		 fprintf(stderr, "Error: Can't read to %s\n", argv[2]);
+		 fprintf(stderr, "Error: Can't read to %s\n", argv[1]);
 		 exit(98);
 	}
 	close(o);
