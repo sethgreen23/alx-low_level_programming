@@ -1,5 +1,14 @@
 #include "main.h"
-
+/**
+ * buff_size - return buffer size
+ * @letters: letters
+ *
+ * Return: return size
+ */
+size_t buff_size(size_t letters)
+{
+	return (letters > BUFFER_SIZE ? BUFFER_SIZE : letters);
+}
 /**
  * read_textfile - read the text file and print it to the standard output
  * @filename: the filename
@@ -23,7 +32,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(file_output);
 		return (0);
 	}
-	while ((bytes_read = read(file_output, buffer, letters)) > 0)
+	while ((bytes_read = read(file_output, buffer, buff_size(letters)) > 0))
 	{
 		bytes_written = write(1, buffer, bytes_read);
 		if (bytes_written == -1)
@@ -32,7 +41,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 			return (0);
 		}
 		letter_count += bytes_written;
-		if (letter_count <= (ssize_t)letters)
+		if (letter_count >= (ssize_t)letters)
 			break;
 	}
 	return (letter_count);
