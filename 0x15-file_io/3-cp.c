@@ -41,6 +41,7 @@ int main(int argc, char **argv)
 	if (close(o) == -1)
 	{
 		fprintf(stderr, "Error: Can't close fd %s\n", o);
+		close(o1);
 		exit(100);
 	}
 	if (close(o1) == -1)
