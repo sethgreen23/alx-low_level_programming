@@ -42,6 +42,7 @@ int main(int argc, char **argv)
 	if (close(o) == -1)
 	{
 		fprintf(stderr, "Error: Can't close fd %d\n", o_copy);
+		close(o1);
 		exit(100);
 	}
 	o1_copy = o1;
