@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	if (o == -1 || r == -1)
+	if (o == -1)
 	{
 		fprintf(stderr, "Error: Can't read to %s\n", argv[1]);
 		exit(98);
