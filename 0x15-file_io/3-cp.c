@@ -1,5 +1,4 @@
 #include "main.h"
-#define BUFFER_SIZE 1024
 /**
  * check_97 - check the correct number of arguments
  * @argc: number of arguments
