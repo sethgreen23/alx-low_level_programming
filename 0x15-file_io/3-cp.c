@@ -9,7 +9,7 @@ void check_97(int argc)
 {
 	if (argc != 3)
 	{
-		perror("Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 }
@@ -83,7 +83,7 @@ int main(int argc, char **argv)
 	ssize_t lenr, lenw;
 	char buffer[BUFFER_SIZE];
 
-	char_97(argc);
+	check_97(argc);
 	f_from = open(argv[1], O_RDONLY);
 	check_98((ssize_t)f_from, argv[1], -1, -1);
 	f_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
