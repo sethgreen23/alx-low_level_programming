@@ -1,6 +1,77 @@
 #include "main.h"
 #define BUFFER_SIZE 1024
 /**
+ * check_97 - check the correct number of arguments
+ * @argc: number of arguments
+ *
+ * Return: nothing
+ */
+void check_97(int argc)
+{
+	if (argc != 3)
+	{
+		perror("Usage: cp file_from file_to\n");
+		exit(97);
+	}
+}
+/**
+ * check_98 - check that file descirptors whre closed
+ * @check: check if true or false
+ * @file: file
+ * @f_from: file descriptor from
+ * @f_to: file desciroptr to
+ *
+ * Return: nothing
+ */
+void check_98(ssize_t check, char *file, int f_from, int f_to)
+{
+	if (check == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
+		if (f_from != -1)
+			close(f_from);
+		if (f_to != -1)
+			close(f_to);
+		exit(98);
+	}
+}
+/**
+ * check_99 - check that file descirptors whre closed
+ * @check: check if true or false
+ * @file: file
+ * @f_from: file descriptor from
+ * @f_to: file descirptor to
+ *
+ * Return: nothing
+ */
+void check_99(ssize_t check, char *file, int f_from, int f_to)
+{
+	if (check == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+		if (f_from != -1)
+			close(f_from);
+		if (fd_to != -1)
+			close(f_to);
+		exit(99);
+	}
+}
+/**
+ * check_100 - check that file descirptors whre closed
+ * @check: check if true or false
+ * @f_d: file descriptor
+ *
+ * Return: nothing
+ */
+void check_100(int check, int f_d)
+{
+	if (check == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_d);
+		exit(100);
+	}
+}
+/**
  * main - main function
  * @argc: argument count
  * @argv: argument values
@@ -9,42 +80,28 @@
  */
 int main(int argc, char **argv)
 {
-	int o, r, w1, o1, o_copy, o1_copy;
+	int f_from, f_to, close_to, close_from;
+	ssize_t lenr, lenw;
 	char buffer[BUFFER_SIZE];
 
-	if (argc != 3)
+	char_97(argc);
+	f_from = open(argv[1], O_RDONLY);
+	check_98((ssize_t)f_from, argv[1], -1, -1);
+	f_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	check_99((ssize_t)f_to, argv[2], f_from, -1);
+	lenr = BUFFER_SIZE;
+	while (lenr == BUFFER_SIZE)
 	{
-		perror("Usage: cp file_from file_to\n");
-		exit(97);
+		lenr = read(f_from, buffer, BUFFER_SIZE);
+		check_98(lenr, argv[1], f_from, f_to);
+		lenw = write(f_to, buffer, lenr);
+		if (lenw != lenr)
+			lenw = -1;
+		check_99(lenw, argv[2], f_from, f_to);
 	}
-	o = open(argv[1], O_RDONLY);
-	o1 = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
-	while ((r = read(o, buffer, BUFFER_SIZE)) > 0)
-	{
-		w1 = write(o1, buffer, r);
-		if (w1 == -1 || o1 == -1)
-		{
-			fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
-		}
-	}
-	if (r == -1 || o == -1)
-	{
-		fprintf(stderr, "Error: Can't read to %s\n", argv[1]);
-		exit(98);
-	}
-	o_copy = o;
-	if (close(o) == -1)
-	{
-		fprintf(stderr, "Error: Can't close fd %d\n", o_copy);
-		close(o1);
-		exit(100);
-	}
-	o1_copy = o1;
-	if (close(o1) == -1)
-	{
-		fprintf(stderr, "Error: Can't close fd %d\n", o1_copy);
-		exit(100);
-	}
+	close_to = close(f_to);
+	close_from = close(f_from);
+	check_100(close_to, f_to);
+	check_100(close_from, f_from);
 	return (0);
 }
