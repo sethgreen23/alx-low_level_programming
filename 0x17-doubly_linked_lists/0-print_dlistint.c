@@ -9,9 +9,9 @@ size_t print_dlistint(const dlistint_t *h)
 {
 	size_t size = 0;
 
-	size = size_dlistint(h);
 	if (h == NULL)
-		return (size);
+		return (0);
+	size = size_dlistint(h);
 	while (h != NULL)
 	{
 		printf("%d\n", h->n);
