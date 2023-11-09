@@ -4,15 +4,21 @@
  * @head: head
  * @index: index
  *
- * Return: return node , if not return NULL
+ * Return: node , if not return NULL
 */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	unsigned int i = 0;
+	unsigned int i = 0, size = 0;
+	dlistint_t temp = head;
 
 	if (head == NULL)
 		return (NULL);
-	if (index >= dlistint_len(head))
+	while (temp != NULL)
+	{
+		size++;
+		temp = temp->next;
+	}
+	if (index >= size)
 		return (NULL);
 	while (head != NULL && i < index)
 	{
