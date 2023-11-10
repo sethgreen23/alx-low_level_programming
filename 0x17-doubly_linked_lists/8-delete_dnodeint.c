@@ -28,7 +28,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		free(temp);
 		return (1);
 	}
-	else if (index == size)
+	else if (index == size - 1)
 	{
 		while (pointer->next != NULL)
 			pointer = pointer->next;
