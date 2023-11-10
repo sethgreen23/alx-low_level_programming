@@ -33,7 +33,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		while (pointer->next != NULL)
 			pointer = pointer->next;
 		pointer->prev->next = NULL;
-		pointer->prev = NULL;
 		free(pointer);
 		return (1);
 	}
@@ -44,8 +43,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 	pointer->next->prev = pointer->prev;
 	pointer->prev->next = pointer->next;
-	pointer->next = NULL;
-	pointer->prev = NULL;
 	free(pointer);
 	return (1);
 }
