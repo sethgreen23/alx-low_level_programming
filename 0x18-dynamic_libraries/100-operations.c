@@ -43,4 +43,14 @@ int mod(int a, int b)
 {
 	return (a % b);
 }
-
+/**
+ * div - division of  two values
+ * @a: a
+ * @b: b
+ *
+ * Return: mod of a and b
+ */
+int div(int a, int b)
+{
+	return (a / b);
+}
