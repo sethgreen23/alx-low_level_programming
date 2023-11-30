@@ -63,6 +63,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		tmp = tmp->next;
 	}
 	hn = create_node(key, value);
+	if (hn == NULL)
+		return (0);
 	hn->next = ht->array[bucketIndex];
 	ht->array[bucketIndex] = hn;
 
