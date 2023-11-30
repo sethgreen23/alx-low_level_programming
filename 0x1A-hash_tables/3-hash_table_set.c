@@ -18,6 +18,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (key == NULL)
 		return (0);
+	if (value == NULL)
+		return (0);
 
 	hn = malloc(sizeof(struct hash_node_s));
 	if (hn == NULL)
