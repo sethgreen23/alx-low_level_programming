@@ -14,7 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *hn = NULL;
 	unsigned long int bucketIndex;
 
-	if (key == NULL)
+	if (ht == NULL || key == NULL)
 		return (0);
 
 	hn = malloc(sizeof(hash_node_t *));
@@ -22,7 +22,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	hn->key = strdup(key);
+	if (hn->key == NULL)
+	{
+		free(hn);
+		return (0);
+	}
 	hn->value = strdup(value);
+	if (hn->value == NULL);
+	{
+		free(hn->key);
+		free(hn);
+		return (0);
+	}
 	hn->next = NULL;
 
 	bucketIndex = key_index((const unsigned char *)key, ht->size);
