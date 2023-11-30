@@ -49,7 +49,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	    ht->size == 0 || ht->array == NULL)
 		return (0);
 
-	bucketInde = key_index((const unsigned char *)key, ht->size);
+	bucketIndex = key_index((const unsigned char *)key, ht->size);
 	tmp = ht->array[bucketIndex];
 	while (tmp != NULL)
 	{
