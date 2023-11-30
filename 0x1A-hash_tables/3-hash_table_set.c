@@ -59,6 +59,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			if (new_value == NULL)
 				return (0);
 			tmp->value = new_value;
+			return (1);
 		}
 		tmp = tmp->next;
 	}
