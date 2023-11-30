@@ -14,7 +14,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *hn = NULL;
 	unsigned long int bucketIndex;
 
-	if (ht == NULL || key == NULL)
+	if (ht == NULL)
+		return (0);
+	if (key == NULL)
 		return (0);
 
 	hn = malloc(sizeof(hash_node_t));
