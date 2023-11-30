@@ -27,7 +27,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	bucketIndex = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[bucketIndex] == NULL)
+	{
 		ht->array[bucketIndex] = hn;
+	}
 	else
 	{
 		hn->next = ht->array[bucketIndex];
