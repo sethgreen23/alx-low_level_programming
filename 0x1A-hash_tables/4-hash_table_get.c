@@ -16,7 +16,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (ht == NULL || ht->size == 0 || ht->array == NULL ||
 	    strlen(key) == 0 || key == NULL)
 		return (NULL);
-	bucketIndex = key_index(key, ht->size);
+	bucketIndex = key_index((const unsigned char *)key, ht->size);
 	tmp = ht->array[bucketIndex];
 	while (tmp != NULL)
 	{
