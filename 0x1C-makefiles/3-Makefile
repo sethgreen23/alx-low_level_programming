@@ -1,0 +1,24 @@
+.PHONY: all clean oclean fclean re
+
+CC:=gcc
+SRC:=main.c school.c
+OBJ:=$(SRC:%.c=%.o)
+NAME:=school
+RM:=rm
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) -f *~ $(NAME)
+
+oclean:
+	$(RM) -f $(OBJ)
+
+fclean:
+	@make clean --no-print-directory -f 3-Makefile
+	@make oclean --no-print-directory -f 3-Makefile
+
+re:
+	@make oclean --no-print-directory -f 3-Makefile
+	@make all --no-print-directory -f 3-Makefile
