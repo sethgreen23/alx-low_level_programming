@@ -6,7 +6,8 @@ def island_perimeter(grid):
     """Island perimerter"""
     perimeter = 0
     height = len(grid)
-    width = len(grid[0])
+    if len(grid[0]):
+        width = len(grid[0])
     for i, row in enumerate(grid):
         for j, element in enumerate(row):
             """Count number of perimeter"""
