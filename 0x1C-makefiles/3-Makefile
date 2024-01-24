@@ -6,7 +6,9 @@ OBJ:=$(SRC:%.c=%.o)
 NAME:=school
 RM:=rm
 
-all: $(OBJ)
+all: $(NAME)
+
+$(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
@@ -15,10 +17,7 @@ clean:
 oclean:
 	$(RM) -f $(OBJ)
 
-fclean:
-	@make clean --no-print-directory -f 3-Makefile
-	@make oclean --no-print-directory -f 3-Makefile
+fclean: clean oclean
+	$(RM) -f $(OBJ)
 
-re:
-	@make oclean --no-print-directory -f 3-Makefile
-	@make all --no-print-directory -f 3-Makefile
+re: fclean all
