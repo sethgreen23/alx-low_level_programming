@@ -6,7 +6,7 @@ RM:=rm
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(SRC)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
