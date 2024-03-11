@@ -1,7 +1,7 @@
 #include "search_algos.h"
 #include <unistd.h>
 /**
- * jump_search - implementation of jump search
+ * interpolation_search - implementation of jump search
  *
  * @array: the array
  * @size: size of the array
@@ -9,30 +9,25 @@
  *
  * Return: index otherwise NULL
  */
-int jump_search(int *array, size_t size, int value)
+int interpolation_search(int *array, size_t size, int value)
 {
-	size_t end, start, i;
+	size_t low, high, probe;
 
 	if (!array)
 		return (-1);
-	start = 0;
-	end = sqrt(size);
-	while (array[end] < value && end < size)
+	low = 0;
+	high = size - 1;
+	while (value >= array[low] && value <= array[high] && low <= high)
 	{
-		printf("Value checked array[%ld] = [%d]\n", start, array[start]);
-		start = end;
-		end = start + sqrt(size);
-	}
-	
-	printf("Value checked array[%ld] = [%d]\n", start, array[start]);
-	printf("Value found between indexes [%ld] and [%ld]\n", start, end);
-	if (end >= size)
-		end = size - 1;
-	for (i = start; i <= end; i++)
-	{
-		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
-		if (array[i] == value)
-			return (i);
+		probe = low + (((double)(high - low) / (array[high] - array[low])) *
+				(value - array[low]));
+		printf("Value checked array[%ld] = [%d]\n", probe, array[probe]);
+		if (array[probe] == value)
+			return (probe);
+		else if (array[probe] > value)
+			high = probe - 1;
+		else
+			low = probe + 1;
 	}
 	return (-1);
 }
