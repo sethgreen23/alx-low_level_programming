@@ -59,10 +59,10 @@ int binary_s(int *array, int value, size_t low, size_t high)
 	}
 	else if (array[middle] < value)
 	{
-		return (binary_s(array, value, middle, high));
+		return (binary_s(array, value, middle + 1, high));
 	}
 	else
 	{
-		return (binary_s(array, value, low, middle));
+		return (binary_s(array, value, low, middle - 1));
 	}
 }
