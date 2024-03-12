@@ -26,20 +26,18 @@ int exponential_search(int *array, size_t size, int value)
 	{
 		if (array[curr] == value)
 			return (curr);
-		else if (array[curr] > value)
+		if (array[curr] > value)
 			break;
+		prev = curr;
+		if (curr == 0)
+			curr = 1;
+		else if (curr == 1)
+			curr = 2;
 		else
-		{
-			prev = curr;
-			if (curr == 0)
-				curr = 1;
-			else if (curr == 1)
-				curr = 2;
-			else
-				curr = curr *  2;
-			if (curr < size && array[curr] < value)
-				printf("Value checked array[%ld] = [%d]\n", curr, array[curr]);
-		}
+			curr = curr *  2;
+		if (curr < size && array[curr] < value)
+			printf("Value checked array[%ld] = [%d]\n", curr, array[curr]);
+		
 	}
 	if (curr >= size)
 		curr = size - 1;
