@@ -38,7 +38,7 @@ int binary_s(int *array, int value, size_t low, size_t high)
 {
 	size_t middle, i;
 
-	if (low >= high)
+	if (low > high)
 		return (-1);
 	middle = (low + high) / 2;
 	printf("Searching in array: ");
@@ -59,10 +59,10 @@ int binary_s(int *array, int value, size_t low, size_t high)
 	}
 	else if (array[middle] < value)
 	{
-		return (binary_s(array, value, middle + 1, high));
+		return (binary_s(array, value, middle, high));
 	}
 	else
 	{
-		return (binary_s(array, value, low, middle - 1));
+		return (binary_s(array, value, low, middle));
 	}
 }
